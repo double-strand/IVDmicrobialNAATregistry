@@ -47,3 +47,8 @@ po/*~
 
 # RStudio Connect folder
 rsconnect/
+
+# Custom Data and Asset Paths
+*.xls
+*.xlsx
+*.csv
