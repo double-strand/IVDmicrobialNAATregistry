@@ -21,5 +21,5 @@ The data features 4 attributes: Microorganism, Trade Name, Manufacturer and a Su
 ###   Step 7  - Expand Subset 2 multi-agent labels (e.g. "CT/GC"), apply acronym expansion, and resolve to NCBI Taxonomy IDs -> pathogen_set2.   
 ###   Step 8  - For 510(k) submissions still unmapped, fetch the FDA summary PDF and use an LLM (NER) to extract organism names -> pathogen_set3.  
 ###   Step 9  - Merge all three sets, dedupe by TaxID, and attach taxonomic metadata (rank, division, genus, species, ...) from NCBI -> FDA510kPathogens.  
-
-![workflowDiagram](assets/workflowDiagram.png)
+<hr />  
+<img src="path/to/your/image.png" width="600" alt="Alt text for screen readers">
