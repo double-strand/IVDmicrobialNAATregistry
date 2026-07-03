@@ -1,5 +1,10 @@
 # ampRegistry
 Workflow dedicated to building a comprehensive repository of FDA-approved Nucleic Acid Amplification Tests (NAATs).
+
+**Building that mapping required synthesizing three distinct layers of knowledge: (i) clinical diagnostics; (ii) pathogen nomenclature, and (iii) bioinformatic search patterns**.
+
+**The objective was to bridge the gap between "FDA regulatory labels" and approved organism taxonomic names.** 
+
  
 ## Data source:  
 The FDA https://www.fda.gov/medical-devices/in-vitro-diagnostics/nucleic-acid-based-tests#microbial which reports approved NAATs applied to detect pathogens.  
