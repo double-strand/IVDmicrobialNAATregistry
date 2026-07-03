@@ -22,4 +22,4 @@ The data features 4 attributes: Microorganism, Trade Name, Manufacturer and a Su
 ###   Step 8  - For 510(k) submissions still unmapped, fetch the FDA summary PDF and use an LLM (NER) to extract organism names -> pathogen_set3.  
 ###   Step 9  - Merge all three sets, dedupe by TaxID, and attach taxonomic metadata (rank, division, genus, species, ...) from NCBI -> FDA510kPathogens.  
 <hr />  
-<img src="path/to/your/image.png" width="600" alt="Alt text for screen readers">
+<img src="assets/workflowDiagram.png" width="600" alt="workflowDiagram">
