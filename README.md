@@ -2,12 +2,9 @@
 Workflow dedicated to building a comprehensive repository of FDA-approved Nucleic Acid Amplification Tests (NAATs).
 
 **Building that mapping required synthesizing three distinct layers of knowledge: (i) clinical diagnostics; (ii) pathogen nomenclature, and (iii) bioinformatic search patterns**.  
-The map was built using the following data normalization steps applied for creating the pathogen_synonyms map: transformed "Human-Readable Clinical Text" into "Machine-Readable Biological Identifiers."  
+**The objective was to bridge the gap between "FDA regulatory labels" and approved organism taxonomic names.**   
+The map was built using the following data normalization steps applied for creating the pathogen_synonyms map: transformed "Human-Readable Clinical Text" into "Machine-Readable Biological Identifiers."    
 
-
-**The objective was to bridge the gap between "FDA regulatory labels" and approved organism taxonomic names.** 
-
- 
 ## Data source:  
 The FDA https://www.fda.gov/medical-devices/in-vitro-diagnostics/nucleic-acid-based-tests#microbial which reports approved NAATs applied to detect pathogens.  
 The data features 4 attributes: Microorganism, Trade Name, Manufacturer and a Submission ID.    
