@@ -3,7 +3,7 @@ Workflow dedicated to mapping FDA-Cleared / Approved IVDs Nucleic Acid Amplifica
 
 **Building that mapping required synthesizing three distinct layers of knowledge: (i) clinical diagnostics; (ii) pathogen nomenclature, and (iii) bioinformatic search patterns**.  
 **The objective was to bridge the gap between "FDA regulatory labels" and approved organism taxonomic names.**   
-The map was built using the following data normalization steps applied for creating the pathogen_synonyms map: transformed "Human-Readable Clinical Text" into "Machine-Readable Biological Identifiers."    
+The map was built using the following data normalization steps applied for creating the pathogen_synonyms map, i.e. transforming "Human-Readable Clinical Text" into "Machine-Readable Biological Identifiers."    
 **1. Correcting "Double-i" and Spelling Artifacts**    
 Many older scientific or medical texts use variations of Latin endings.  
 Example: Candida kruseii vs. Candida krusei.  
