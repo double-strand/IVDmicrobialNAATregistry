@@ -45,14 +45,15 @@ disk_cache <- cachem::cache_disk(cache_dir)
 
 # forcing refresh flags — setting any to TRUE to re-run that step from scratch
 FORCE_REFRESH <- list(
-  fda_table        = FALSE,
-  organism_mapping = FALSE,
-  fda_pdfs_all     = FALSE,  
-  tech_classify    = FALSE,   
-  taxdb_subset1    = FALSE,
-  taxdb_subset2    = FALSE,
-  llm_ner          = FALSE,
-  taxonomy_summary = FALSE
+  fda_table             = FALSE,
+  organism_mapping      = FALSE,
+  fda_pdfs_all          = FALSE,  
+  tech_classify         = FALSE,   
+  taxdb_subset1         = FALSE,
+  taxdb_subset2         = FALSE,
+  llm_ner_resp_viruses  = FALSE,   # Step 7b: NER on "Respiratory Viruses" submissions
+  llm_ner               = FALSE,
+  taxonomy_summary      = FALSE
 )
 
 # ── 0.2 resource  ────────────────────────────────────────────────────────────
@@ -532,6 +533,138 @@ pathogen_set1_2 <- bind_rows(pathogen_set1, pathogen_set2) |>
   filter(FDAregulatoryLabels != "Sepsis")
 
 # ==============================================================================
+# Step 7b — Targeted NER for "Respiratory Viruses" submissions
+#
+# "Respiratory Viruses" passed the binomial/uninomial filter and mapped to an
+# NCBI TaxID, but that TaxID covers all viruses — far too broad to be useful.
+# This step:
+#   1. Identifies all Submission IDs linked to "Respiratory Viruses".
+#   2. Fetches their FDA summary PDFs (reusing all_pdf_texts where available).
+#   3. Runs a targeted LLM NER prompt asking for specific respiratory virus names.
+#   4. Resolves the extracted names to unique NCBI TaxIDs.
+#   5. Removes the "Respiratory Viruses" row from pathogen_set1_2 and appends
+#      the resolved granular entries as pathogen_set_resp_viruses.
+# ==============================================================================
+
+NER_RESP_VIRUS_PROMPT <- paste0(
+  "You are reading an FDA 510(k) summary for a nucleic acid amplification test (NAAT). ",
+  "List every specific respiratory virus that this assay is designed to detect. ",
+  "Return ONLY a valid JSON array of strings — no markdown fences, no prose. ",
+  "Use full scientific or accepted common names (e.g. 'Influenza A virus', ",
+  "'Human respiratory syncytial virus', 'Human metapneumovirus', 'SARS-CoV-2'). ",
+  "Do NOT include generic terms such as 'Respiratory Viruses', 'respiratory pathogens', ",
+  "or organism names that are not viruses. ",
+  "If no specific respiratory viruses can be identified, return an empty array: []"
+)
+
+# 1. Extract Submission IDs linked to "Respiratory Viruses"
+resp_virus_row <- pathogen_set1_2 |>
+  filter(FDAregulatoryLabels == "Respiratory Viruses")
+
+resp_virus_submissions <- character(0)
+if (nrow(resp_virus_row) > 0) {
+  resp_virus_submissions <- resp_virus_row$Submissions |>
+    str_split(",\\s*") |>
+    unlist() |>
+    str_squish() |>
+    unique()
+}
+
+# 2. Fetch PDF texts — reuse all_pdf_texts cache, fetch any missing ones
+resp_virus_texts <- lapply(resp_virus_submissions, function(sid) {
+  if (sid %in% names(all_pdf_texts) && !is.na(all_pdf_texts[[sid]])) {
+    return(all_pdf_texts[[sid]])
+  }
+  get_fda_summary_text(sid)
+})
+names(resp_virus_texts) <- resp_virus_submissions
+resp_virus_texts_valid  <- resp_virus_texts[!is.na(resp_virus_texts)]
+
+message(sprintf(
+  "Step 7b: %d PDFs available for NER (%d could not be fetched)",
+  length(resp_virus_texts_valid),
+  length(resp_virus_submissions) - length(resp_virus_texts_valid)
+))
+
+# 3. Run targeted NER — fresh Chat object per document, no history contamination
+resp_virus_ner_raw <- with_cache(
+  "07b_llm_ner_resp_viruses",
+  FORCE_REFRESH$llm_ner_resp_viruses,
+  function() {
+    results <- Map(
+      get_organisms_safely,          # reuse the existing NER function
+      doc_id        = names(resp_virus_texts_valid),
+      text_data     = resp_virus_texts_valid,
+      MoreArgs      = list(
+        max_retries   = 3,
+        model         = GEMINI_MODEL,
+        system_prompt = NER_RESP_VIRUS_PROMPT   # targeted prompt
+      )
+    )
+    dplyr::bind_rows(results)
+  }
+)
+
+# 4. Build a label × Submissions mapping from NER results
+resp_virus_mapping <- resp_virus_ner_raw |>
+  filter(!is.na(FDAregulatoryLabels), nzchar(FDAregulatoryLabels)) |>
+  # Apply the same taxonomic patches used elsewhere in the pipeline
+  mutate(
+    FDAregulatoryLabels = ifelse(
+      FDAregulatoryLabels %in% names(taxonomic_patches),
+      taxonomic_patches[FDAregulatoryLabels],
+      FDAregulatoryLabels
+    )
+  ) |>
+  group_by(FDAregulatoryLabels) |>
+  summarise(
+    Submissions = paste(unique(Submission), collapse = ", "),
+    .groups     = "drop"
+  )
+
+# Resolve extracted names to unique NCBI TaxIDs
+taxdbQuery_resp <- sapply(resp_virus_mapping$FDAregulatoryLabels, function(x) {
+  entrez_search(db = "taxonomy", term = x)$count
+})
+
+resp_virus_mapping_1to1 <- resp_virus_mapping |>
+  filter(FDAregulatoryLabels %in% names(which(taxdbQuery_resp == 1)))
+
+message(sprintf(
+  "Step 7b: %d unique respiratory virus labels → %d resolved to a unique NCBI TaxID",
+  nrow(resp_virus_mapping),
+  nrow(resp_virus_mapping_1to1)
+))
+
+pathogen_set_resp_viruses <- do.call(rbind, lapply(
+  resp_virus_mapping_1to1$FDAregulatoryLabels,
+  function(x) {
+    res <- entrez_search(db = "taxonomy", term = x)
+    data.frame(
+      FDAregulatoryLabels = x,
+      TaxID = if (length(res$ids) > 0) unlist(res$ids)[1] else NA_character_,
+      stringsAsFactors = FALSE
+    )
+  }
+))
+pathogen_set_resp_viruses <- merge(
+  resp_virus_mapping_1to1,
+  pathogen_set_resp_viruses,
+  by = "FDAregulatoryLabels"
+)
+
+# 5. Remove the overly-broad "Respiratory Viruses" row and append granular results
+pathogen_set1_2 <- pathogen_set1_2 |>
+  filter(FDAregulatoryLabels != "Respiratory Viruses") |>
+  bind_rows(pathogen_set_resp_viruses)
+
+message(sprintf(
+  "Step 7b complete: 'Respiratory Viruses' replaced by %d specific virus entries",
+  nrow(pathogen_set_resp_viruses)
+))
+
+
+# ==============================================================================
 # Step 8  - For 510(k) submissions still unmapped, fetching the FDA summary PDF 
 #           and using an LLM (NER) to extract organism names -> pathogen_set3.
 # ==============================================================================
@@ -753,12 +886,15 @@ FDA510kPathogens_NAAT <- FDA510kPathogens_NAAT |>
     )
   )
 
+# getting the total number of submissions per pathogen
+FDA510kPathogens_NAAT$Submission_Count <- sapply(1:dim(FDA510kPathogens_NAAT)[1], \(i) stringr::str_count(FDA510kPathogens_NAAT$Submissions[i], ",") + 1) 
+
 # saving outputs 
-saveRDS(FDA510kPathogens_NAAT, "FDA510kPathogens_NAAT_v3.rds")
+#saveRDS(FDA510kPathogens_NAAT, "FDA510kPathogens_NAAT_v3.rds")
 write.csv(FDA510kPathogens_NAAT, "FDA510kPathogens_NAAT_v3.csv", row.names = FALSE)
 
 # also saving excluded (hybridization) submissions
-saveRDS(excluded_submissions, "FDA510k_excluded_hybridization.rds")
+#saveRDS(excluded_submissions, "FDA510k_excluded_hybridization.rds")
 write.csv(excluded_submissions, "FDA510k_excluded_hybridization.csv", row.names = FALSE)
 
 message("Done. Outputs: FDA510kPathogens_NAAT_v3.rds / .csv")
