@@ -1,5 +1,5 @@
 # ampRegistry
-Workflow dedicated to mapping FDA-Cleared / Approved IVDs (FDA-approved Nucleic Acid Amplification Tests (NAATs)) to pathogen taxonomic names.
+Workflow dedicated to mapping FDA-Cleared / Approved IVDs (FDA-approved Nucleic Acid Amplification Tests (NAATs)) to pathogen taxonomic names. 
 
 **Building that mapping required synthesizing three distinct layers of knowledge: (i) clinical diagnostics; (ii) pathogen nomenclature, and (iii) bioinformatic search patterns**.  
 **The objective was to bridge the gap between "FDA regulatory labels" and approved organism taxonomic names.**   
