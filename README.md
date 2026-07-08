@@ -1,4 +1,4 @@
-# IVDmicrobialNAATregistry  
+# IVD microbial NAAT registry  
 Workflow dedicated to mapping FDA-Cleared / Approved IVDs Nucleic Acid Amplification Tests (NAATs) to pathogen taxonomic names. 
 
 **Building that mapping required synthesizing three distinct layers of knowledge: (i) clinical diagnostics; (ii) pathogen nomenclature, and (iii) bioinformatic search patterns**.  
