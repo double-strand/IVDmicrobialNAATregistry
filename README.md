@@ -4,6 +4,26 @@ Workflow dedicated to building a comprehensive repository of FDA-approved Nuclei
 **Building that mapping required synthesizing three distinct layers of knowledge: (i) clinical diagnostics; (ii) pathogen nomenclature, and (iii) bioinformatic search patterns**.  
 **The objective was to bridge the gap between "FDA regulatory labels" and approved organism taxonomic names.**   
 The map was built using the following data normalization steps applied for creating the pathogen_synonyms map: transformed "Human-Readable Clinical Text" into "Machine-Readable Biological Identifiers."    
+**1. Correcting "Double-i" and Spelling Artifacts**    
+Many older scientific or medical texts use variations of Latin endings.
+Example: Candida kruseii vs. Candida krusei.
+Logic: The International Code of Nomenclature for algae, fungi, and plants (ICN) standardized many of these names. Most sequence databases (NCBI) use the single "i" version. The script identifies the “typos” and mapped the entries to the current taxonomic standard.
+**2. Resolving Clinical Shorthand**  
+Medical professionals and the FDA often use acronyms that don't exist in a genome database.
+Example: Strep A, GBS, CT/GC.
+Logic:
+Strep A (Group A Streptococcus) is almost exclusively Streptococcus pyogenes.
+GBS (Group B Streptococcus) is Streptococcus agalactiae.  
+CT/GC are standard clinical abbreviations for Chlamydia trachomatis and Neisseria gonorrhoeae.  
+These acronyms were mapped by identifying the "Indications for Use" typically associated with those abbreviations in FDA 510(k) summaries.  
+**3. Mapping Product-to-Host (Functional Mapping)**  
+Some FDA entries describe the target of the test rather than the organism itself.  
+Example: Shiga Toxin.  
+Logic: Shiga toxin is a protein produced primarily by STEC (Shiga toxin-producing Escherichia coli) and Shigella dysenteriae. To run an inclusivity check, a primer to a toxin name must be aligned to the genes (stx1 or stx2) within the host genome. Genes mapped this to E. coli as the most common primary diagnostic target.  
+**4. Handling Taxonomic "Collapse"**  
+The FDA often approves tests for a whole genus or "group," while bioinformatics requires a specific sequence.  
+Example: Leishmania species or Mycobacterium species.  
+Logic: the "species" or "group" suffix is stripped. In NCBI, searching for the Genus name (Leishmania) is the correct way to retrieve all relevant species for an inclusivity audit.  
 
 ## Data source:  
 The FDA https://www.fda.gov/medical-devices/in-vitro-diagnostics/nucleic-acid-based-tests#microbial which reports approved NAATs applied to detect pathogens.  
