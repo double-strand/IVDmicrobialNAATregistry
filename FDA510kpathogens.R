@@ -264,10 +264,11 @@ get_technology <- function(doc_id, text_data,
       parsed <- fromJSON(json)
     }, error = function(e) {
       if (grepl("429", conditionMessage(e))) {
-        message(sprintf("[%s] Rate-limit (attempt %d) — sleeping 45s", doc_id, attempt))
+        # Print the exact error to see if it says "Quota Exceeded" vs "Too Many Requests"
+        message(sprintf("[NER %s] Rate-limit (attempt %d) — %s. Sleeping 45s", doc_id, attempt, err_msg))
         Sys.sleep(45)
       } else {
-        message(sprintf("[%s] Fatal error: %s", doc_id, conditionMessage(e)))
+        message(sprintf("[NER %s] Fatal error: %s", doc_id, err_msg))
         give_up <<- TRUE
       }
     })
