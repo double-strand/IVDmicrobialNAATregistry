@@ -35,6 +35,7 @@ suppressPackageStartupMessages({
   library(ellmer)        
   library(jsonlite)      
   library(cachem)       
+  library(XML)
 })
 
 
@@ -101,7 +102,7 @@ NER_SYSTEM_PROMPT <- paste0(
   "If no microorganisms are found, return an empty array: []"
 )
 
-# Thin wrapper: checking disk_cache, running expr() on miss or force_refresh.
+# checking disk_cache, running expr() on miss or force_refresh.
 with_cache <- function(key, force_refresh = FALSE, expr) {
   if (!force_refresh && disk_cache$exists(key)) {
     message(sprintf("[cache HIT]  %s", key))
@@ -822,25 +823,46 @@ FDA510kPathogens_NAAT <- bind_rows(pathogen_set1_2, pathogen_set3) |>
     .groups             = "drop"
   )
 
-message(sprintf("Step 10: %d pathogen entries after combining sets", nrow(FDA510kPathogens_NAAT)))
 
 # getting taxonomic rank level 
 FDA510kPathogensDivisions <- with_cache("08_taxonomy_summary", FORCE_REFRESH$taxonomy_summary, function() {
   do.call(rbind, lapply(FDA510kPathogens_NAAT$TaxID, function(uid) {
+    Sys.sleep(0.34)  # complying with NCBI rate limit
     tryCatch({
-      tax_rec <- entrez_summary(db = "taxonomy", uid)
-      as.data.frame(
-        t(extract_from_esummary(
-          tax_rec,
-          c("rank", "division", "scientificname", "commonname",
-            "taxid", "genus", "species", "subsp"),
-          simplify = TRUE
-        ))
-      ) |>
-        unnest(rank, division, scientificname, commonname,
-               taxid, genus, species, subsp)
+      # returning full TaxNode XML including LineageEx
+      xml_rec  <- entrez_fetch(db = "taxonomy", id = uid, rettype = "xml")
+      xml_tree <- XML::xmlParse(xml_rec)
+      
+      extract_node <- function(xpath) {
+        node <- XML::xpathSApply(xml_tree, xpath, XML::xmlValue)
+        if (length(node) == 0) NA_character_ else node[1]
+      }
+      
+      # LineageEx contains all ancestor nodes with their ranks
+      # finding the genus and species rank ancestors directly
+      genus_val <- XML::xpathSApply(
+        xml_tree,
+        "//LineageEx/Taxon[Rank='genus']/ScientificName",
+        XML::xmlValue
+      )
+      species_val <- XML::xpathSApply(
+        xml_tree,
+        "//LineageEx/Taxon[Rank='species']/ScientificName",
+        XML::xmlValue
+      )
+      
+      data.frame(
+        taxid          = uid,
+        rank           = extract_node("//Taxon/Rank"),
+        division       = extract_node("//Taxon/Division"),
+        scientificname = extract_node("//Taxon/ScientificName"),
+        commonname     = extract_node("//Taxon/OtherNames/CommonName"),
+        genus          = if (length(genus_val)   > 0) genus_val[1]   else NA_character_,
+        species        = if (length(species_val) > 0) species_val[1] else NA_character_,
+        stringsAsFactors = FALSE
+      )
     }, error = function(e) {
-      message(sprintf("entrez_summary failed for TaxID %s: %s", uid, e$message))
+      message(sprintf("entrez_fetch failed for TaxID %s: %s", uid, e$message))
       data.frame(taxid = uid, stringsAsFactors = FALSE)
     })
   }))
