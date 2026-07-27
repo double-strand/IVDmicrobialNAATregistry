@@ -891,12 +891,12 @@ FDA510kPathogens_NAAT <- FDA510kPathogens_NAAT |>
 FDA510kPathogens_NAAT$Submission_Count <- sapply(1:dim(FDA510kPathogens_NAAT)[1], \(i) stringr::str_count(FDA510kPathogens_NAAT$Submissions[i], ",") + 1) 
 
 # saving outputs 
-#saveRDS(FDA510kPathogens_NAAT, "FDA510kPathogens_NAAT_v3.rds")
-write.csv(FDA510kPathogens_NAAT, "FDA510kPathogens_NAAT_v3.csv", row.names = FALSE)
+saveRDS(FDA510kPathogens_NAAT, "FDA510kPathogens_NAAT.rds")
+write.csv(FDA510kPathogens_NAAT, "FDA510kPathogens_NAAT.csv", row.names = FALSE)
 
 # also saving excluded (hybridization) submissions
 #saveRDS(excluded_submissions, "FDA510k_excluded_hybridization.rds")
 write.csv(excluded_submissions, "FDA510k_excluded_hybridization.csv", row.names = FALSE)
 
-message("Done. Outputs: FDA510kPathogens_NAAT_v3.rds / .csv")
+message("Done. Outputs: FDA510kPathogens_NAAT.rds / .csv")
 ###############################################################################
