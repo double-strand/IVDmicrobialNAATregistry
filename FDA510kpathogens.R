@@ -92,13 +92,25 @@ TECH_SYSTEM_PROMPT <- paste0(
   '"confidence": "<high|medium|low>"}'
 )
 
-# Named Entity Recognition (NER) system prompt for pathogens
+NER_RESP_VIRUS_PROMPT <- paste0(
+  "You are a regulatory affairs expert analyzing an FDA 510(k) summary for a NAAT assay. ",
+  "List every specific respiratory virus that this assay is explicitly designed to detect. ",
+  "Use full scientific or accepted common names (e.g. 'Influenza A virus', 'SARS-CoV-2'). ",
+  "CRUCIAL: You MUST EXCLUDE any 'off-panel', 'cross-reactivity', or interference viruses. ",
+  "Extract the microorganisms and separate them into two categories. ",
+  "Return ONLY a valid JSON object matching this exact schema, with no markdown fences:\n",
+  '{"targets": ["Virus 1", "Virus 2"], "off_panel": ["Virus 3", "Virus 4"]}'
+)
+
+# Named Entity Recognition (NER) system prompt for targeted pathogens using the "decoy bin" strategy
 NER_SYSTEM_PROMPT <- paste0(
-  "Perform Named Entity Recognition (NER). ",
-  "Extract all MICROORGANISM entities from the text. ",
-  "Return ONLY a valid JSON array of strings — no markdown fences, no prose. ",
+  "You are a regulatory affairs expert analyzing an FDA 510(k) summary for a NAAT assay. ",
+  "510(k) documents contain the targeted pathogens (usually in the Intended Use section) ",
+  "and long lists of 'off-panel', 'cross-reactivity', or 'analytical specificity' organisms. ",
+  "Extract the microorganisms and separate them into two categories. ",
   "Standardize abbreviations to full binomial nomenclature. ",
-  "If no microorganisms are found, return an empty array: []"
+  "Return ONLY a valid JSON object matching this exact schema, with no markdown fences:\n",
+  '{"targets": ["Organism 1", "Organism 2"], "off_panel": ["Organism 3", "Organism 4"]}'
 )
 
 # checking disk_cache, running expr() on miss or force_refresh.
@@ -547,16 +559,6 @@ pathogen_set1_2 <- bind_rows(pathogen_set1, pathogen_set2) |>
 #      the resolved granular entries as pathogen_set_resp_viruses.
 # ==============================================================================
 
-NER_RESP_VIRUS_PROMPT <- paste0(
-  "You are reading an FDA 510(k) summary for a nucleic acid amplification test (NAAT). ",
-  "List every specific respiratory virus that this assay is designed to detect. ",
-  "Return ONLY a valid JSON array of strings — no markdown fences, no prose. ",
-  "Use full scientific or accepted common names (e.g. 'Influenza A virus', ",
-  "'Human respiratory syncytial virus', 'Human metapneumovirus', 'SARS-CoV-2'). ",
-  "Do NOT include generic terms such as 'Respiratory Viruses', 'respiratory pathogens', ",
-  "or organism names that are not viruses. ",
-  "If no specific respiratory viruses can be identified, return an empty array: []"
-)
 
 # 1. Extract Submission IDs linked to "Respiratory Viruses"
 resp_virus_row <- pathogen_set1_2 |>
@@ -740,12 +742,21 @@ get_organisms_safely <- function(doc_id, text_data,
     if (give_up || !is.null(parsed)) break
   }
   
-  if (is.null(parsed) || !is.character(parsed)) return(empty_row)
-  if (length(parsed) == 0) return(empty_row)
+  # if (is.null(parsed) || !is.character(parsed)) return(empty_row)
+  # if (length(parsed) == 0) return(empty_row)
+  # 
+  # data.frame(
+  #   Submission          = doc_id,
+  #   FDAregulatoryLabels = parsed,
+  #   stringsAsFactors    = FALSE
+  # Extract only the "targets" array from the JSON object
+  targets <- parsed[["targets"]]
+  
+  if (is.null(targets) || length(targets) == 0) return(empty_row)
   
   data.frame(
     Submission          = doc_id,
-    FDAregulatoryLabels = parsed,
+    FDAregulatoryLabels = targets,  # Only keep the targeted pathogens
     stringsAsFactors    = FALSE
   )
 }
