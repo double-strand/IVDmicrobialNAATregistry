@@ -34,7 +34,8 @@ suppressPackageStartupMessages({
   library(pdftools)      
   library(ellmer)        
   library(jsonlite)      
-  library(cachem)       
+  library(cachem)
+  library(XML)           # efetch XML parsing for DetectionRank lineage walk
 })
 
 
@@ -822,6 +823,31 @@ pathogen_set3 <- merge(subset_3_new, pathogen_set3, by = "FDAregulatoryLabels")
 # ==============================================================================
 #   Step 9  - Merge all three sets, dedupe by TaxID, and attach taxonomic metadata
 #             (rank, division, genus, species, ...) from NCBI -> FDA510kPathogens.
+#
+#   NEW: also compute DetectionRank and DetectionRank_TaxID.
+#
+#   Rationale
+#   ─────────
+#   The NCBI rank of a mapped TaxID reflects WHERE in the taxonomy tree that
+#   node sits — but the assay's intended detection scope is often expressed at a
+#   DIFFERENT level.  A test cleared for "Salmonella" (genus) implicitly covers
+#   all species; one cleared for "SARS-CoV-2" (NCBI rank = isolate) is clinically
+#   a species-level assay.  The two new columns make this explicit:
+#
+#     DetectionRank       : the rank that defines the scope of the assay,
+#                           drawn from the following hierarchy:
+#                             strain / serovar / serotype / serogroup / subspecies
+#                             → species → species group → genus → family → order
+#                             → class → phylum → kingdom
+#                           For isolate-rank nodes (NCBI bookkeeping artefact
+#                           for viruses and some bacteria), the detection rank
+#                           is the nearest named rank ancestor (usually species).
+#
+#     DetectionRank_TaxID : NCBI TaxID of the node whose rank equals
+#                           DetectionRank.  For species / genus / family entries
+#                           this is the same as TaxID.  For isolate / strain /
+#                           no-rank entries it is the TaxID of the parent node
+#                           carrying the nearest meaningful rank.
 # ==============================================================================
 
 FDA510kPathogens_NAAT <- bind_rows(pathogen_set1_2, pathogen_set3) |>
@@ -833,26 +859,115 @@ FDA510kPathogens_NAAT <- bind_rows(pathogen_set1_2, pathogen_set3) |>
     .groups             = "drop"
   )
 
-message(sprintf("Step 10: %d pathogen entries after combining sets", nrow(FDA510kPathogens_NAAT)))
+message(sprintf("Step 9: %d pathogen entries after combining sets", nrow(FDA510kPathogens_NAAT)))
 
-# getting taxonomic rank level 
+# ── Rank hierarchy for detection-scope logic ───────────────────────────────────
+# Ranks that carry clear diagnostic meaning, ordered from most specific to broadest.
+# "isolate" and "no rank" are NCBI bookkeeping ranks with no clinical scope meaning;
+# entries at these ranks will be walked up to the nearest ancestor with a named rank.
+MEANINGFUL_RANKS <- c(
+  "strain", "serovar", "serotype", "serogroup",
+  "subspecies", "species", "species group", "species subgroup",
+  "genus", "subgenus", "tribe", "subfamily",
+  "family", "superfamily", "order", "class", "phylum", "kingdom"
+)
+
+BOOKKEEPING_RANKS <- c("isolate", "no rank", "clade", "unclassified")
+
+# ── efetch-based lineage walker ────────────────────────────────────────────────
+# Returns a list: list(detection_rank, detection_taxid) for one TaxID.
+# Uses entrez_fetch with rettype="xml" which includes the full LineageEx.
+get_detection_rank <- function(uid) {
+  Sys.sleep(ifelse(nchar(Sys.getenv("ENTREZ_KEY")) > 0, 0.12, 0.38))
+  tryCatch({
+    xml_text <- entrez_fetch(db = "taxonomy", id = uid, rettype = "xml")
+    xml_tree <- XML::xmlParse(xml_text, asText = TRUE)
+
+    # Own rank of this node
+    own_rank <- XML::xpathSApply(xml_tree, "/TaxaSet/Taxon/Rank", XML::xmlValue)
+    own_rank <- if (length(own_rank) > 0) own_rank[1] else NA_character_
+
+    if (!is.na(own_rank) && own_rank %in% MEANINGFUL_RANKS) {
+      # This node's rank is already meaningful — it IS the detection rank.
+      return(list(detection_rank = own_rank, detection_taxid = as.character(uid)))
+    }
+
+    # Own rank is a bookkeeping rank (isolate / no rank) or NA.
+    # Walk up the LineageEx to find the nearest named meaningful ancestor.
+    lineage_taxids <- XML::xpathSApply(
+      xml_tree, "/TaxaSet/Taxon/LineageEx/Taxon/TaxId", XML::xmlValue
+    )
+    lineage_ranks <- XML::xpathSApply(
+      xml_tree, "/TaxaSet/Taxon/LineageEx/Taxon/Rank", XML::xmlValue
+    )
+
+    if (length(lineage_ranks) == 0) {
+      return(list(detection_rank = own_rank %||% NA_character_,
+                  detection_taxid = as.character(uid)))
+    }
+
+    # LineageEx is ordered root → leaf; reverse to get nearest ancestor first
+    lineage_df <- data.frame(
+      taxid = rev(lineage_taxids),
+      rank  = rev(lineage_ranks),
+      stringsAsFactors = FALSE
+    )
+
+    nearest <- lineage_df[lineage_df$rank %in% MEANINGFUL_RANKS, ]
+
+    if (nrow(nearest) == 0) {
+      # No meaningful rank found anywhere in lineage; return own rank as-is
+      return(list(detection_rank = own_rank %||% NA_character_,
+                  detection_taxid = as.character(uid)))
+    }
+
+    list(
+      detection_rank  = nearest$rank[1],
+      detection_taxid = as.character(nearest$taxid[1])
+    )
+  }, error = function(e) {
+    message(sprintf("get_detection_rank failed for TaxID %s: %s", uid, e$message))
+    list(detection_rank = NA_character_, detection_taxid = NA_character_)
+  })
+}
+
+# ── Taxonomy enrichment + detection-rank computation ─────────────────────────
 FDA510kPathogensDivisions <- with_cache("08_taxonomy_summary", FORCE_REFRESH$taxonomy_summary, function() {
   do.call(rbind, lapply(FDA510kPathogens_NAAT$TaxID, function(uid) {
+    Sys.sleep(ifelse(nchar(Sys.getenv("ENTREZ_KEY")) > 0, 0.12, 0.38))
     tryCatch({
+      # esummary for rank/division/scientificname/commonname
       tax_rec <- entrez_summary(db = "taxonomy", uid)
-      as.data.frame(
+      base_df <- as.data.frame(
         t(extract_from_esummary(
           tax_rec,
-          c("rank", "division", "scientificname", "commonname",
-            "taxid", "genus", "species", "subsp"),
+          c("rank", "division", "scientificname", "commonname", "taxid"),
           simplify = TRUE
         ))
       ) |>
-        unnest(rank, division, scientificname, commonname,
-               taxid, genus, species, subsp)
+        tidyr::unnest(rank, division, scientificname, commonname, taxid)
+
+      # Parse genus and species from scientificname (esummary does not carry them)
+      sci <- as.character(base_df$scientificname[1])
+      parts <- strsplit(str_squish(sci), " ")[[1]]
+      base_df$genus   <- if (length(parts) >= 1) parts[1] else NA_character_
+      base_df$species <- if (length(parts) >= 2) parts[2] else NA_character_
+      base_df$subsp   <- if (length(parts) >= 3) paste(parts[3:length(parts)], collapse = " ") else NA_character_
+
+      # Detection rank via lineage walk
+      dr <- get_detection_rank(uid)
+      base_df$DetectionRank    <- dr$detection_rank
+      base_df$DetectionRank_TaxID <- dr$detection_taxid
+
+      base_df
     }, error = function(e) {
       message(sprintf("entrez_summary failed for TaxID %s: %s", uid, e$message))
-      data.frame(taxid = uid, stringsAsFactors = FALSE)
+      data.frame(
+        taxid = uid,
+        DetectionRank       = NA_character_,
+        DetectionRank_TaxID = NA_character_,
+        stringsAsFactors    = FALSE
+      )
     })
   }))
 })
