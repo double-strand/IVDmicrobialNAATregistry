@@ -1,0 +1,84 @@
+TaxID,FDAregulatoryLabels,Submissions,rank,division,scientificname,Technology,Submission_Count
+485,Neisseria gonorrhoeae,"K111409, K132251, K200866, K151589, K140446, K191352, K200533, K110923, K173887, K132270, K202408, K121710, K190441, K190515, K231329, K230267, K240217, K240197, K210585, K220407, K202977, K103798, K111951, K140029, K140198, K233100",species,b-proteobacteria,Neisseria gonorrhoeae,Hybrid_PCR_Hybridization / PCR,26
+813,Chlamydia trachomatis,"K190223, K111409, K132251, K200866, K151589, K140446, K191352, K200533, K110923, K173887, K132270, K202408, K121710, K190441, K190515, K231329, K230267, K240217, K240197, K210585, K220407, K202977, K111951, K140029, K140198",species,chlamydias,Chlamydia trachomatis,Hybrid_PCR_Hybridization / PCR,25
+1301,Streptococcus,"K162772, K121539, K203429, K222638, K122019, K121044, K111860, K112125, K133503, K133883, K141173, K141338, K170558, K170557, K162274, K172402, K172126",genus,firmicutes,Streptococcus,Hybrid_PCR_Hybridization / Other_Amplification / PCR,17
+1496,Clostridioides difficile,"K171441, K170491, K132726, K132235, K130470, K123998, K123197, K113433, K110203, K110012, K100818, K133936, K123355, K172569, K171770, K232092",species,firmicutes,Clostridioides difficile,Hybrid_PCR_Hybridization / Other_Amplification / PCR,16
+5722,Trichomonas vaginalis,"K143329, K122062, K130268, K161182, K151565, K200436, K103798, K111951, K140029, K140198",species,trichomonads,Trichomonas vaginalis,Hybrid_PCR_Hybridization,10
+10535,Adenovirus,"K121942, K141931, K102952, K132159, K103798, K140083, K140407, K233100, K233410",species,viruses,unidentified adenovirus,Hybrid_PCR_Hybridization / PCR,9
+1279,Staphylococcus,"K120138, K112937, K102740, K101879, K142721, K162444, K190771, K191172, K191168",genus,firmicutes,Staphylococcus,Hybrid_PCR_Hybridization,9
+1314,Streptococcus pyogenes,"K173932, K173653, K103798, K111951, K140029, K140083, K140198, K233100",species,firmicutes,Streptococcus pyogenes,Hybrid_PCR_Hybridization,8
+5476,Candida albicans,"K173536, K103798, K111951, K140029, K140083, K140198, K140377, K233100",species,budding yeasts & allies,Candida albicans,Hybrid_PCR_Hybridization / Other_Amplification,8
+142786,Norovirus,"K171511, K142501, K121894, K123274, K140083, K140407",genus,viruses,Norovirus,Hybrid_PCR_Hybridization / PCR,6
+517,Bordetella,"K163626, K143206, K170284, K133673, K173498, K183223",genus,b-proteobacteria,Bordetella,Hybrid_PCR_Hybridization / Other_Amplification,6
+162145,Human Metapneumovirus,"K132200, K112490, K131813, K233100, K233410",isolate,viruses,human metapneumovirus,Hybrid_PCR_Hybridization,5
+2097,Mycoplasma genitalium,"K240197, K202977, K190433, K103798, K233100",species,bacteria,Mycoplasmoides genitalium,Hybrid_PCR_Hybridization,5
+5478,Candida glabrata,"K190472, K173536, K111951, K140029, K140198",species,budding yeasts & allies,Nakaseomyces glabratus,Hybrid_PCR_Hybridization / Other_Amplification,5
+10358,Cytomegalovirus,"K202755, K111951, K140083, K140198",genus,viruses,Cytomegalovirus,Hybrid_PCR_Hybridization,4
+5482,Candida tropicalis,"K173536, K111951, K140029, K140198",species,budding yeasts & allies,Candida tropicalis,Hybrid_PCR_Hybridization / Other_Amplification,4
+10376,EBV,"K202215, K212778, K233100",isolate,viruses,human gammaherpesvirus 4,Hybrid_PCR_Hybridization,3
+11250,Human respiratory syncytial virus,"K173932, K173653",isolate,viruses,human respiratory syncytial virus,Hybrid_PCR_Hybridization,2
+12814,Respiratory Syncytial Virus,"K233410, K233100",isolate,viruses,Respiratory syncytial virus,Hybrid_PCR_Hybridization,2
+1350,Enterococcus,"K123753, K102416",genus,firmicutes,Enterococcus,Hybrid_PCR_Hybridization,2
+1392,Bacillus Anthracis,"K131930, K192871",species,firmicutes,Bacillus anthracis,Hybrid_PCR_Hybridization,2
+169066,Human Rhinovirus,"K233410, K233100",species,viruses,Human rhinovirus sp.,Hybrid_PCR_Hybridization,2
+1891762,BKV,"K203220, K202215",species,viruses,Betapolyomavirus hominis,Hybrid_PCR_Hybridization,2
+2104,Mycoplasmoides pneumoniae,"K160829, K152800",species,bacteria,Mycoplasmoides pneumoniae,Other_Amplification,2
+2697049,Severe Acute Respiratory Syndrome Coronavirus 2 (SARS-CoV-2),"K233410, K233100",isolate,viruses,Severe acute respiratory syndrome coronavirus 2,Hybrid_PCR_Hybridization,2
+10298,Herpes Simplex Virus 1,K233100,isolate,viruses,Human alphaherpesvirus 1,Hybrid_PCR_Hybridization,1
+10310,Herpes Simplex Virus 2,K233100,isolate,viruses,Human alphaherpesvirus 2,Hybrid_PCR_Hybridization,1
+10359,Human Cytomegalovirus,K233100,isolate,viruses,Human betaherpesvirus 5,Hybrid_PCR_Hybridization,1
+103855,Bordetella hinzii,K233100,species,b-proteobacteria,Bordetella hinzii,Hybrid_PCR_Hybridization,1
+1045010,Escherichia coli O157,K233100,serogroup,enterobacteria,Escherichia coli O157,Hybrid_PCR_Hybridization,1
+11137,Human Coronavirus 229E,K233100,isolate,viruses,Human coronavirus 229E,Hybrid_PCR_Hybridization,1
+11234,Measles Virus,K233100,isolate,viruses,Measles morbillivirus,Hybrid_PCR_Hybridization,1
+11320,Influenza A virus,K233410,,viruses,Influenza A virus,Hybrid_PCR_Hybridization,1
+11520,Influenza B virus,K233410,,viruses,Influenza B virus,Hybrid_PCR_Hybridization,1
+119210,Influenza A H3N2,K233100,serotype,viruses,H3N2 subtype,Hybrid_PCR_Hybridization,1
+1193974,Human Enterovirus,K233410,species,viruses,Human enterovirus,Hybrid_PCR_Hybridization,1
+12059,Human Rhinovirus/Enterovirus,K233100,genus,viruses,Enterovirus,Hybrid_PCR_Hybridization,1
+12062,Echovirus 6,K233100,isolate,viruses,Echovirus E6,Hybrid_PCR_Hybridization,1
+1280,Staphylococcus aureus,K233100,species,firmicutes,Staphylococcus aureus,Hybrid_PCR_Hybridization,1
+1282,Staphylococcus epidermidis,K233100,species,firmicutes,Staphylococcus epidermidis,Hybrid_PCR_Hybridization,1
+1304,Streptococcus salivarius,K233100,species,firmicutes,Streptococcus salivarius,Hybrid_PCR_Hybridization,1
+1311,Streptococcus agalactiae,K233100,species,firmicutes,Streptococcus agalactiae,Hybrid_PCR_Hybridization,1
+1313,Streptococcus pneumoniae,K233100,species,firmicutes,Streptococcus pneumoniae,Hybrid_PCR_Hybridization,1
+1335626,MERS Coronavirus,K233100,isolate,viruses,Middle East respiratory syndrome-related coronavirus,Hybrid_PCR_Hybridization,1
+1507401,Bocavirus,K233100,genus,viruses,Bocaparvovirus,Hybrid_PCR_Hybridization,1
+1579,Lactobacillus acidophilus,K233100,species,firmicutes,Lactobacillus acidophilus,Hybrid_PCR_Hybridization,1
+1717,Corynebacterium diphtheriae,K233100,species,high G+C Gram-positive bacteria,Corynebacterium diphtheriae,Hybrid_PCR_Hybridization,1
+1773,Mycobacterium tuberculosis,K233100,species,high G+C Gram-positive bacteria,Mycobacterium tuberculosis,Hybrid_PCR_Hybridization,1
+2130,Ureaplasma urealyticum,K233100,species,bacteria,Ureaplasma urealyticum,Hybrid_PCR_Hybridization,1
+2560602,Mumps Virus,K233100,isolate,viruses,Mumps orthorubulavirus,Hybrid_PCR_Hybridization,1
+277944,Human Coronavirus NL63,K233100,isolate,viruses,Human coronavirus NL63,Hybrid_PCR_Hybridization,1
+287,Pseudomonas aeruginosa,K233100,species,g-proteobacteria,Pseudomonas aeruginosa,Hybrid_PCR_Hybridization,1
+290028,Human Coronavirus HKU1,K233100,isolate,viruses,Human coronavirus HKU1,Hybrid_PCR_Hybridization,1
+2901879,Severe Acute Respiratory Syndrome Coronavirus (SARS-CoV),K233100,isolate,viruses,Severe acute respiratory syndrome coronavirus,Hybrid_PCR_Hybridization,1
+2918835,Adenovirus C,K233100,species,cyanobacteria,Petrachloros mirabilis,Hybrid_PCR_Hybridization,1
+31631,Human Coronavirus OC43,K233100,isolate,viruses,Human coronavirus OC43,Hybrid_PCR_Hybridization,1
+35814,Bordetella holmesii,K233100,species,b-proteobacteria,Bordetella holmesii,Hybrid_PCR_Hybridization,1
+40324,Stenotrophomonas maltophilia,K233100,species,g-proteobacteria,Stenotrophomonas maltophilia,Hybrid_PCR_Hybridization,1
+42789,Enterovirus D68,K233100,isolate,viruses,enterovirus D68,Hybrid_PCR_Hybridization,1
+446,Legionella pneumophila,K233100,species,g-proteobacteria,Legionella pneumophila,Hybrid_PCR_Hybridization,1
+451,Legionella micdadei,K233100,species,g-proteobacteria,Legionella micdadei,Hybrid_PCR_Hybridization,1
+453,Legionella feeleii,K233100,species,g-proteobacteria,Legionella feeleii,Hybrid_PCR_Hybridization,1
+471,Acinetobacter calcoaceticus,K233100,species,g-proteobacteria,Acinetobacter calcoaceticus,Hybrid_PCR_Hybridization,1
+480,Moraxella catarrhalis,K233100,species,g-proteobacteria,Moraxella catarrhalis,Hybrid_PCR_Hybridization,1
+487,Neisseria meningitidis,K233100,species,b-proteobacteria,Neisseria meningitidis,Hybrid_PCR_Hybridization,1
+4909,Pichia kudriavzevii,K173536,species,budding yeasts & allies,Pichia kudriavzevii,Other_Amplification,1
+495,Neisseria elongata,K233100,species,b-proteobacteria,Neisseria elongata,Hybrid_PCR_Hybridization,1
+5059,Aspergillus flavus,K233100,species,ascomycete fungi,Aspergillus flavus,Hybrid_PCR_Hybridization,1
+518,Bordetella bronchiseptica,K233100,species,b-proteobacteria,Bordetella bronchiseptica,Hybrid_PCR_Hybridization,1
+519,Bordetella parapertussis,K233100,species,b-proteobacteria,Bordetella parapertussis,Hybrid_PCR_Hybridization,1
+520,Bordetella pertussis,K233100,species,b-proteobacteria,Bordetella pertussis,Hybrid_PCR_Hybridization,1
+5207,Cryptococcus neoformans,K233100,species,basidiomycete fungi,Cryptococcus neoformans,Hybrid_PCR_Hybridization,1
+521,Bordetella avium,K233100,species,b-proteobacteria,Bordetella avium,Hybrid_PCR_Hybridization,1
+548,Enterobacter aerogenes,K233100,species,enterobacteria,Klebsiella aerogenes,Hybrid_PCR_Hybridization,1
+571,Klebsiella oxytoca,K233100,species,enterobacteria,Klebsiella oxytoca,Hybrid_PCR_Hybridization,1
+573,Klebsiella pneumoniae,K233100,species,enterobacteria,Klebsiella pneumoniae,Hybrid_PCR_Hybridization,1
+584,Proteus mirabilis,K233100,species,g-proteobacteria,Proteus mirabilis,Hybrid_PCR_Hybridization,1
+615,Serratia marcescens,K233100,species,g-proteobacteria,Serratia marcescens,Hybrid_PCR_Hybridization,1
+694448,Human Coronavirus,K233410,species,viruses,unidentified human coronavirus,Hybrid_PCR_Hybridization,1
+727,Haemophilus influenzae,K233100,species,g-proteobacteria,Haemophilus influenzae,Hybrid_PCR_Hybridization,1
+746128,Aspergillus fumigatus,K233100,species,ascomycete fungi,Aspergillus fumigatus,Hybrid_PCR_Hybridization,1
+777,Coxiella burnetii,K103207,species,g-proteobacteria,Coxiella burnetii,Hybrid_PCR_Hybridization,1
+83558,Chlamydophila pneumoniae,K233100,species,chlamydias,Chlamydia pneumoniae,Hybrid_PCR_Hybridization,1
