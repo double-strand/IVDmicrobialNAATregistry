@@ -1,0 +1,457 @@
+"TaxID","FDAregulatoryLabels","Submissions","rank","division","scientificname","commonname","genus","species","subsp","DetectionRank","DetectionRank_TaxID","Technology","Submission_Count"
+"102684","Streptococcus infantarius","K181663, K213236","species","firmicutes","Streptococcus infantarius","","Streptococcus","infantarius",NA,"species","102684","Hybrid_PCR_Hybridization",2
+"102862","Proteus penneri","K193519, K213236","species","g-proteobacteria","Proteus penneri","","Proteus","penneri",NA,"species","102862","Hybrid_PCR_Hybridization",2
+"102886","Streptococcus didelphis","K213236","species","firmicutes","Streptococcus didelphis","","Streptococcus","didelphis",NA,"species","102886","Hybrid_PCR_Hybridization",1
+"10298","Herpes simplex virus 1","K111951, K133448, K140198, K141458, K142738, K162451, K162673, K172509, K173798, K232286, K111527, K140029, K151906, K180559, K151046, K103798, K142156","isolate","viruses","Human alphaherpesvirus 1","Herpes simplex virus type 1","Human","alphaherpesvirus","1","species","3050292","Hybrid_PCR_Hybridization / Other_Amplification / PCR",17
+"10310","Herpes simplex virus 2","K111951, K133448, K140198, K141458, K142738, K162451, K162673, K172509, K173798, K232286, K111527, K140029, K151906, K180559, K151046, K103798, K142156","isolate","viruses","Human alphaherpesvirus 2","","Human","alphaherpesvirus","2","species","3050293","Hybrid_PCR_Hybridization / Other_Amplification / PCR",17
+"10335","Varicella-zoster virus","K133448, K162451, K192376, K232286","isolate","viruses","Human alphaherpesvirus 3","Varicella-zoster virus","Human","alphaherpesvirus","3","species","3050294","Hybrid_PCR_Hybridization",4
+"10358","Cytomegalovirus","K202755","genus","viruses","Cytomegalovirus","","Cytomegalovirus",NA,NA,"genus","10358","Hybrid_PCR_Hybridization",1
+"10376","EBV","K202215, K212778","isolate","viruses","human gammaherpesvirus 4","Epstein-Barr virus","human","gammaherpesvirus","4","species","3050299","Hybrid_PCR_Hybridization",2
+"1045010","Escherichia coli O157","K121894, K140377, K140407, K152955, K173330, K180041, K220062","serogroup","enterobacteria","Escherichia coli O157","","Escherichia","coli","O157","serogroup","1045010","Hybrid_PCR_Hybridization / PCR",7
+"104669","Cryptococcus amylolentus","K193519","species","basidiomycete fungi","Cryptococcus amylolentus","","Cryptococcus","amylolentus",NA,"species","104669","Hybrid_PCR_Hybridization",1
+"10524","Human adenovirus 41","K180041","isolate","viruses","Human adenovirus 41","","Human","adenovirus","41","species","3241426","Hybrid_PCR_Hybridization",1
+"10535","Adenovirus","K121942, K141931, K102952, K132159, K180966, K181324, K183597, K190222, K202196, K213954, K233100, K192485, K163636, K120267, K123620, K170604, K152579, K161573, K233410, K143653, K112781, K103776, K173171, K172629","species","viruses","unidentified adenovirus","","unidentified","adenovirus",NA,"species","10535","Hybrid_PCR_Hybridization / PCR",24
+"106654","Acinetobacter nosocomialis","K193519","species","g-proteobacteria","Acinetobacter nosocomialis","","Acinetobacter","nosocomialis",NA,"species","106654","Hybrid_PCR_Hybridization",1
+"1071886","Streptococcus troglodytidis","K213236","species","firmicutes","Streptococcus troglodytidis","","Streptococcus","troglodytidis",NA,"species","1071886","Hybrid_PCR_Hybridization",1
+"1077464","Streptococcus tigurinus","K213236","subspecies","firmicutes","Streptococcus oralis subsp. tigurinus","","Streptococcus","oralis","subsp. tigurinus","subspecies","1077464","Hybrid_PCR_Hybridization",1
+"1080072","Streptococcus dentasini","K213236","species","firmicutes","Streptococcus dentasini","","Streptococcus","dentasini",NA,"species","1080072","Hybrid_PCR_Hybridization",1
+"108486","Corynebacterium falsenii","K181663","species","high G+C Gram-positive bacteria","Corynebacterium falsenii","","Corynebacterium","falsenii",NA,"species","108486","Hybrid_PCR_Hybridization",1
+"109790","Lactobacillus jensenii","K190452, K201017, K223653, K243725","species","firmicutes","Lactobacillus jensenii","","Lactobacillus","jensenii",NA,"species","109790","Hybrid_PCR_Hybridization",4
+"1111760","Streptococcus troglodytae","K213236","species","firmicutes","Streptococcus troglodytae","","Streptococcus","troglodytae",NA,"species","1111760","Hybrid_PCR_Hybridization",1
+"11137","Coronavirus 229E","K192485, K120267, K123620, K170604, K173171, K181324, K202196, K183597, K233100","isolate","viruses","Human coronavirus 229E","","Human","coronavirus","229E","species","3433756","Hybrid_PCR_Hybridization / PCR",9
+"11216","Human Parainfluenza virus type 3","K141927, K132238, K153223, K172282, K202196, K181324","isolate","viruses","Human respirovirus 3","","Human","respirovirus","3","species","3049953","Hybrid_PCR_Hybridization / PCR",6
+"11250","Human respiratory syncytial virus","K173932, K173653, K230719, K242353","isolate","viruses","human respiratory syncytial virus","","human","respiratory","syncytial virus","species","3049954","Hybrid_PCR_Hybridization / PCR",4
+"11309","2009 H1N1 influenza virus","K100148, K123191, K111778","species","viruses","unidentified influenza virus","","unidentified","influenza","virus","species","11309","Hybrid_PCR_Hybridization",3
+"113107","Streptococcus australis","K193519, K213236","species","firmicutes","Streptococcus australis","","Streptococcus","australis",NA,"species","113107","Hybrid_PCR_Hybridization",2
+"11320","Influenza A virus","K141520, K161220, K113323, K133869, K161556, K172091, K200370, K141859, K101564, K180218, K192485, K153544, K201849, K120267, K170604, K152579, K163628, K131584, K111775, K233410, K111387, K230236, K131728, K102170, K120413, K100148, K161814, K143653, K103209, K162456, K151226, K123191, K142045, K112781, K103776, K171641, K171792, K173171, K171963, K190204, K191534, K191729, K210234, K190302, K200065, K180966, K183597, K190222, K213954, K222736, K223591, K230719, K230956, K241652, K241806, K242353, K132129, K153219","","viruses","Influenza A virus","","Influenza","A","virus","species","2955291","Hybrid_PCR_Hybridization / PCR",58
+"1134687","Klebsiella michiganensis","K191288, K193519","species","enterobacteria","Klebsiella michiganensis","","Klebsiella","michiganensis",NA,"species","1134687","Hybrid_PCR_Hybridization",2
+"114652","Streptococcus orisratti","K213236","species","firmicutes","Streptococcus orisratti","","Streptococcus","orisratti",NA,"species","114652","Hybrid_PCR_Hybridization",1
+"114727","Influenza A 2009 H1N1 subtype","K113731, K103209, K132237, K140851","serotype","viruses","H1N1 subtype","","H1N1","subtype",NA,"serotype","114727","Hybrid_PCR_Hybridization",4
+"11520","Influenza B virus","K121003, K141520, K161220, K113323, K133869, K172091, K200370, K180218, K192485, K153544, K120267, K170604, K152579, K163628, K131584, K140857, K111775, K233410, K111387, K230236, K131728, K102170, K120413, K161814, K143653, K103209, K162456, K151226, K123191, K142045, K112781, K103776, K171641, K171792, K173171, K171963, K190204, K191534, K191729, K210234, K190302, K200065, K180966, K183597, K190086, K190222, K202196, K213954, K222736, K223591, K230719, K230956, K241652, K241806, K242353, K132129, K153219","","viruses","Influenza B virus","","Influenza","B","virus","species","2955465","Hybrid_PCR_Hybridization / PCR",57
+"115981","Salmonella enterica serovar Montevideo","K213236","","enterobacteria","Salmonella enterica subsp. enterica serovar Montevideo","","Salmonella","enterica","subsp. enterica serovar Montevideo","subspecies","59201","Hybrid_PCR_Hybridization",1
+"1176757","Cryptosporidium viatorum","K220062","species","apicomplexans","Cryptosporidium viatorum","","Cryptosporidium","viatorum",NA,"species","1176757","Hybrid_PCR_Hybridization",1
+"119210","Influenza A virus subtype H3N2","K140851","serotype","viruses","H3N2 subtype","","H3N2","subtype",NA,"serotype","119210","Hybrid_PCR_Hybridization",1
+"119224","Streptococcus phocae","K213236","species","firmicutes","Streptococcus phocae","","Streptococcus","phocae",NA,"species","119224","Hybrid_PCR_Hybridization",1
+"119602","Streptococcus dysgalactiae subsp. equisimilis","K213236","subspecies","firmicutes","Streptococcus dysgalactiae subsp. equisimilis","","Streptococcus","dysgalactiae","subsp. equisimilis","subspecies","119602","Hybrid_PCR_Hybridization",1
+"119858","Bacillus sonorensis","K213236","species","firmicutes","Bacillus sonorensis","","Bacillus","sonorensis",NA,"species","119858","Hybrid_PCR_Hybridization",1
+"12059","Human Enterovirus/Rhinovirus","K233410, K161573, K192485, K163636, K123620, K170604, K152579, K173171, K180966, K181324, K183597, K190222, K213954, K143653, K112781, K103776, K172629, K120267, K242256, K233100, K202196","genus","viruses","Enterovirus","","Enterovirus",NA,NA,"genus","12059","Hybrid_PCR_Hybridization / PCR",21
+"122928","Norovirus genogroup I","K180041, K181427, K121894, K140407, K220062","clade","viruses","Norovirus GI","","Norovirus","GI",NA,"species","3431196","Hybrid_PCR_Hybridization / PCR",5
+"122929","Norovirus genogroup II","K180041, K181427, K121894, K140407, K220062","clade","viruses","Norovirus GII","","Norovirus","GII",NA,"species","3431196","Hybrid_PCR_Hybridization / PCR",5
+"1234680","Streptococcus rubneri","K213236","species","firmicutes","Streptococcus rubneri","","Streptococcus","rubneri",NA,"species","1234680","Hybrid_PCR_Hybridization",1
+"1255","Pediococcus pentosaceus","K181663","species","firmicutes","Pediococcus pentosaceus","","Pediococcus","pentosaceus",NA,"species","1255","Hybrid_PCR_Hybridization",1
+"12637","Dengue virus","K220870, K243463","isolate","viruses","Dengue virus","","Dengue","virus",NA,"species","3052464","Hybrid_PCR_Hybridization / PCR",2
+"1269","Micrococcus","K181663","genus","high G+C Gram-positive bacteria","Micrococcus","","Micrococcus",NA,NA,"genus","1269","Hybrid_PCR_Hybridization",1
+"1270","Micrococcus luteus","K181663","species","high G+C Gram-positive bacteria","Micrococcus luteus","","Micrococcus","luteus",NA,"species","1270","Hybrid_PCR_Hybridization",1
+"1273","Micrococcus lylae","K181663","species","high G+C Gram-positive bacteria","Micrococcus lylae","","Micrococcus","lylae",NA,"species","1273","Hybrid_PCR_Hybridization",1
+"12730","Human Parainfluenza virus type 1","K141927, K132238, K153223, K172282, K202196, K181324","isolate","viruses","Human respirovirus 1","","Human","respirovirus","1","species","3049952","Hybrid_PCR_Hybridization / PCR",6
+"1276936","Staphylococcus jettensis","K213236","species","firmicutes","Staphylococcus petrasii","","Staphylococcus","petrasii",NA,"species","1276936","Hybrid_PCR_Hybridization",1
+"1279","Staphylococcus","K120138, K143171, K181663, K213236, K112937, K102740, K101879, K142721, K162444, K190771, K191172, K191168","genus","firmicutes","Staphylococcus","","Staphylococcus",NA,NA,"genus","1279","Hybrid_PCR_Hybridization",12
+"1280","Staphylococcus aureus","K143171, K152470, K163390, K172708, K180966, K181324, K181663, K190222, K191967, K193519, K200010, K213236","species","firmicutes","Staphylococcus aureus","","Staphylococcus","aureus",NA,"species","1280","Hybrid_PCR_Hybridization / PCR",12
+"1280935","Cryptosporidium sp. Chipmunk genotype I","K220062","species","apicomplexans","Cryptosporidium sp. chipmunk genotype I","","Cryptosporidium","sp.","chipmunk genotype I","species","1280935","Hybrid_PCR_Hybridization",1
+"1281","Staphylococcus carnosus","K152470, K193519, K213236, K181663","species","firmicutes","Staphylococcus carnosus","","Staphylococcus","carnosus",NA,"species","1281","Hybrid_PCR_Hybridization",4
+"12814","Respiratory syncytial virus","K120413, K151226, K171963, K210234, K200065, K202196, K230956, K231481, K241806, K161375, K161220, K180218, K153544, K120267, K123620, K170604, K152579, K161573, K233410, K132129, K153219, K102170, K103776, K173171, K171974, K181324, K213954, K222736, K233100, K180966, K190222","isolate","viruses","Respiratory syncytial virus","","Respiratory","syncytial","virus","species","3049954","Hybrid_PCR_Hybridization / PCR",31
+"1282","Staphylococcus epidermidis","K143171, K152470, K163390, K181663, K193519, K200010, K213236","species","firmicutes","Staphylococcus epidermidis","","Staphylococcus","epidermidis",NA,"species","1282","Hybrid_PCR_Hybridization",7
+"1283","Staphylococcus haemolyticus","K152470, K181663, K193519, K213236","species","firmicutes","Staphylococcus haemolyticus","","Staphylococcus","haemolyticus",NA,"species","1283","Hybrid_PCR_Hybridization",4
+"1284","Staphylococcus hyicus","K213236","species","firmicutes","Staphylococcus hyicus","","Staphylococcus","hyicus",NA,"species","1284","Hybrid_PCR_Hybridization",1
+"1285","Staphylococcus intermedius","K152470, K193519, K213236","species","firmicutes","Staphylococcus intermedius","","Staphylococcus","intermedius",NA,"species","1285","Hybrid_PCR_Hybridization",3
+"1286","Staphylococcus simulans","K152470, K181663, K193519, K213236","species","firmicutes","Staphylococcus simulans","","Staphylococcus","simulans",NA,"species","1286","Hybrid_PCR_Hybridization",4
+"1288","Staphylococcus xylosus","K152470, K193519, K213236","species","firmicutes","Staphylococcus xylosus","","Staphylococcus","xylosus",NA,"species","1288","Hybrid_PCR_Hybridization",3
+"1290","Staphylococcus hominis","K152470, K181663, K193519, K213236","species","firmicutes","Staphylococcus hominis","","Staphylococcus","hominis",NA,"species","1290","Hybrid_PCR_Hybridization",4
+"1292","Staphylococcus warneri","K152470, K181663, K193519, K213236","species","firmicutes","Staphylococcus warneri","","Staphylococcus","warneri",NA,"species","1292","Hybrid_PCR_Hybridization",4
+"1293","Staphylococcus gallinarum","K152470, K213236","species","firmicutes","Staphylococcus gallinarum","","Staphylococcus","gallinarum",NA,"species","1293","Hybrid_PCR_Hybridization",2
+"1294","Staphylococcus muscae","K152470, K213236","species","firmicutes","Staphylococcus muscae","","Staphylococcus","muscae",NA,"species","1294","Hybrid_PCR_Hybridization",2
+"1295","Staphylococcus schleiferi","K152470, K181663, K193519, K213236","species","firmicutes","Staphylococcus schleiferi","","Staphylococcus","schleiferi",NA,"species","1295","Hybrid_PCR_Hybridization",4
+"1296536","Enterobacter xiangfangensis","K213236","subspecies","enterobacteria","Enterobacter hormaechei subsp. xiangfangensis","","Enterobacter","hormaechei","subsp. xiangfangensis","subspecies","1296536","Hybrid_PCR_Hybridization",1
+"1301","Streptococcus","K162772, K121539, K203429, K222638, K122019, K121044, K111860, K112125, K133503, K133883, K141173, K141338, K170558, K170557, K162274, K172402, K172126, K143171, K181663, K213236","genus","firmicutes","Streptococcus","","Streptococcus",NA,NA,"genus","1301","Hybrid_PCR_Hybridization / Other_Amplification / PCR",20
+"1302","Streptococcus gordonii","K181663, K193519, K213236","species","firmicutes","Streptococcus gordonii","","Streptococcus","gordonii",NA,"species","1302","Hybrid_PCR_Hybridization",3
+"1303","Streptococcus oralis","K181663, K193519, K213236","species","firmicutes","Streptococcus oralis","","Streptococcus","oralis",NA,"species","1303","Hybrid_PCR_Hybridization",3
+"1304","Streptococcus salivarius","K181663, K193519, K213236","species","firmicutes","Streptococcus salivarius","","Streptococcus","salivarius",NA,"species","1304","Hybrid_PCR_Hybridization",3
+"1305","Streptococcus sanguinis","K193519, K213236","species","firmicutes","Streptococcus sanguinis","","Streptococcus","sanguinis",NA,"species","1305","Hybrid_PCR_Hybridization",2
+"1307","Streptococcus suis","K193519, K213236","species","firmicutes","Streptococcus suis","","Streptococcus","suis",NA,"species","1307","Hybrid_PCR_Hybridization",2
+"1308","Streptococcus thermophilus","K213236","species","firmicutes","Streptococcus thermophilus","","Streptococcus","thermophilus",NA,"species","1308","Hybrid_PCR_Hybridization",1
+"1309","Streptococcus mutans","K181663, K193519","species","firmicutes","Streptococcus mutans","","Streptococcus","mutans",NA,"species","1309","Hybrid_PCR_Hybridization",2
+"1310","Streptococcus sobrinus","K193519, K213236","species","firmicutes","Streptococcus sobrinus","","Streptococcus","sobrinus",NA,"species","1310","Hybrid_PCR_Hybridization",2
+"1311","Streptococcus agalactiae","K143171, K173725, K180966, K181324, K181663, K182472, K190222, K193519, K200010, K213236, K242256","species","firmicutes","Streptococcus agalactiae","","Streptococcus","agalactiae",NA,"species","1311","Hybrid_PCR_Hybridization / PCR",11
+"1313","Streptococcus pneumoniae","K143171, K163390, K180966, K181324, K181663, K190222, K191967, K193519, K200010, K213236, K242256","species","firmicutes","Streptococcus pneumoniae","","Streptococcus","pneumoniae",NA,"species","1313","Hybrid_PCR_Hybridization / PCR",11
+"1314","Streptococcus pyogenes","K173932, K173653, K143171, K180966, K181324, K181663, K190222, K193519, K200010, K213236, K242256","species","firmicutes","Streptococcus pyogenes","","Streptococcus","pyogenes",NA,"species","1314","Hybrid_PCR_Hybridization / PCR",11
+"1317","Streptococcus downei","K213236","species","firmicutes","Streptococcus downei","","Streptococcus","downei",NA,"species","1317","Hybrid_PCR_Hybridization",1
+"1318","Streptococcus parasanguinis","K181663, K193519, K213236","species","firmicutes","Streptococcus parasanguinis","","Streptococcus","parasanguinis",NA,"species","1318","Hybrid_PCR_Hybridization",3
+"1320","Streptococcus Group G","K181663","species","firmicutes","Streptococcus sp. 'group G'","","Streptococcus","sp.","'group G'","species","1320","Hybrid_PCR_Hybridization",1
+"1326","Streptococcus acidominimus","K213236","species","firmicutes","Streptococcus acidominimus","","Streptococcus","acidominimus",NA,"species","1326","Hybrid_PCR_Hybridization",1
+"1328","Streptococcus anginosus","K181663, K193519, K213236","species","firmicutes","Streptococcus anginosus","","Streptococcus","anginosus",NA,"species","1328","Hybrid_PCR_Hybridization",3
+"1329","Streptococcus canis","K193519, K213236","species","firmicutes","Streptococcus canis","","Streptococcus","canis",NA,"species","1329","Hybrid_PCR_Hybridization",2
+"1332","Streptococcus criae","K213236","species","firmicutes","Streptococcus criae","","Streptococcus","criae",NA,"species","1332","Hybrid_PCR_Hybridization",1
+"1333","Streptococcus criceti","K213236","species","firmicutes","Streptococcus criceti","","Streptococcus","criceti",NA,"species","1333","Hybrid_PCR_Hybridization",1
+"1334","Streptococcus dysgalactiae","K181663, K193519, K213236","species","firmicutes","Streptococcus dysgalactiae","","Streptococcus","dysgalactiae",NA,"species","1334","Hybrid_PCR_Hybridization",3
+"133448","Citrobacter youngae","K191288, K213236","species","enterobacteria","Citrobacter youngae","","Citrobacter","youngae",NA,"species","133448","Hybrid_PCR_Hybridization",2
+"1335","Streptococcus bovis","K181663, K193519, K213236","species","firmicutes","Streptococcus equinus","","Streptococcus","equinus",NA,"species","1335","Hybrid_PCR_Hybridization",3
+"1335626","Middle East Respiratory Syndrome Coronavirus","K173171, K181324, K190222, K202196","isolate","viruses","Middle East respiratory syndrome-related coronavirus","","Middle","East","respiratory syndrome-related coronavirus","species","3433633","Hybrid_PCR_Hybridization / PCR",4
+"1336","Streptococcus equi","K193519, K213236","species","firmicutes","Streptococcus equi","","Streptococcus","equi",NA,"species","1336","Hybrid_PCR_Hybridization",2
+"1337","Streptococcus hyointestinalis","K213236","species","firmicutes","Streptococcus hyointestinalis","","Streptococcus","hyointestinalis",NA,"species","1337","Hybrid_PCR_Hybridization",1
+"13373","Burkholderia mallei","K231336","species","b-proteobacteria","Burkholderia mallei","","Burkholderia","mallei",NA,"species","13373","Hybrid_PCR_Hybridization",1
+"1338","Streptococcus intermedius","K181663, K193519, K213236","species","firmicutes","Streptococcus intermedius","","Streptococcus","intermedius",NA,"species","1338","Hybrid_PCR_Hybridization",3
+"1340","Streptococcus porcinus","K213236","species","firmicutes","Streptococcus porcinus","","Streptococcus","porcinus",NA,"species","1340","Hybrid_PCR_Hybridization",1
+"1341","Streptococcus ratti","K213236","species","firmicutes","Streptococcus ratti","","Streptococcus","ratti",NA,"species","1341","Hybrid_PCR_Hybridization",1
+"1343","Streptococcus vestibularis","K181663, K193519, K213236","species","firmicutes","Streptococcus vestibularis","","Streptococcus","vestibularis",NA,"species","1343","Hybrid_PCR_Hybridization",3
+"1345","Streptococcus ferus","K213236","species","firmicutes","Streptococcus ferus","","Streptococcus","ferus",NA,"species","1345","Hybrid_PCR_Hybridization",1
+"1348","Streptococcus parauberis","K213236","species","firmicutes","Streptococcus parauberis","","Streptococcus","parauberis",NA,"species","1348","Hybrid_PCR_Hybridization",1
+"1349","Streptococcus uberis","K213236","species","firmicutes","Streptococcus uberis","","Streptococcus","uberis",NA,"species","1349","Hybrid_PCR_Hybridization",1
+"1349415","Streptococcus loxodontisalivarius","K213236","species","firmicutes","Streptococcus loxodontisalivarius","","Streptococcus","loxodontisalivarius",NA,"species","1349415","Hybrid_PCR_Hybridization",1
+"1349416","Streptococcus saliviloxodontae","K213236","species","firmicutes","Streptococcus saliviloxodontae","","Streptococcus","saliviloxodontae",NA,"species","1349416","Hybrid_PCR_Hybridization",1
+"1350","Enterococcus","K123753, K102416, K143171, K181663, K213236","genus","firmicutes","Enterococcus","","Enterococcus",NA,NA,"genus","1350","Hybrid_PCR_Hybridization",5
+"1351","Enterococcus faecalis","K143171, K163390, K181663, K191288, K193519, K200010, K213236","species","firmicutes","Enterococcus faecalis","","Enterococcus","faecalis",NA,"species","1351","Hybrid_PCR_Hybridization",7
+"1352","Enterococcus faecium","K143171, K163390, K172708, K181663, K193519, K200010, K213236","species","firmicutes","Enterococcus faecium","","Enterococcus","faecium",NA,"species","1352","Hybrid_PCR_Hybridization",7
+"1352223","Streptococcus dentiloxodontae","K213236","species","firmicutes","Streptococcus dentiloxodontae","","Streptococcus","dentiloxodontae",NA,"species","1352223","Hybrid_PCR_Hybridization",1
+"1353","Enterococcus gallinarum","K181663, K213236","species","firmicutes","Enterococcus gallinarum","","Enterococcus","gallinarum",NA,"species","1353","Hybrid_PCR_Hybridization",2
+"1354","Enterococcus hirae","K181663, K213236","species","firmicutes","Enterococcus hirae","","Enterococcus","hirae",NA,"species","1354","Hybrid_PCR_Hybridization",2
+"1359","Streptococcus cremoris","K213236","species","firmicutes","Lactococcus cremoris","","Lactococcus","cremoris",NA,"species","1359","Hybrid_PCR_Hybridization",1
+"1390","Bacillus amyloliquefaciens","K181663, K213236","species","firmicutes","Bacillus amyloliquefaciens","","Bacillus","amyloliquefaciens",NA,"species","1390","Hybrid_PCR_Hybridization",2
+"1392","Bacillus Anthracis","K131930, K192871, K163522, K231336","species","firmicutes","Bacillus anthracis","anthrax bacterium","Bacillus","anthracis",NA,"species","1392","Hybrid_PCR_Hybridization",4
+"1392869","Escherichia coli K1","K242256","strain","enterobacteria","Escherichia coli K1","","Escherichia","coli","K1","strain","1392869","Hybrid_PCR_Hybridization",1
+"1396","Bacillus cereus","K181663, K213236","species","firmicutes","Bacillus cereus","","Bacillus","cereus",NA,"species","1396","Hybrid_PCR_Hybridization",2
+"1402","Bacillus licheniformis","K181663, K213236","species","firmicutes","Bacillus licheniformis","","Bacillus","licheniformis",NA,"species","1402","Hybrid_PCR_Hybridization",2
+"1423","Bacillus subtilis","K181663, K213236","species","firmicutes","Bacillus subtilis","","Bacillus","subtilis",NA,"species","1423","Hybrid_PCR_Hybridization",2
+"142596","Streptococcus pasteuri","K213236","species","firmicutes","Streptococcus pasteuri","","Streptococcus","pasteuri",NA,"species","142596","Hybrid_PCR_Hybridization",1
+"142786","Norovirus","K171511, K142501, K243813","genus","viruses","Norovirus","","Norovirus",NA,NA,"genus","142786","Hybrid_PCR_Hybridization",3
+"1428","Bacillus thuringiensis","K181663, K213236","species","firmicutes","Bacillus thuringiensis","","Bacillus","thuringiensis",NA,"species","1428","Hybrid_PCR_Hybridization",2
+"1432788","Streptococcus cuniculi","K213236","species","firmicutes","Streptococcus cuniculi","","Streptococcus","cuniculi",NA,"species","1432788","Hybrid_PCR_Hybridization",1
+"143387","Fusobacterium necrophorum subsp. funduliforme","K213236","subspecies","fusobacteria","Fusobacterium necrophorum subsp. funduliforme","","Fusobacterium","necrophorum","subsp. funduliforme","subspecies","143387","Hybrid_PCR_Hybridization",1
+"143388","Fusobacterium necrophorum subsp. necrophorum","K213236","subspecies","fusobacteria","Fusobacterium necrophorum subsp. necrophorum","","Fusobacterium","necrophorum","subsp. necrophorum","subspecies","143388","Hybrid_PCR_Hybridization",1
+"1451356","Streptococcus moroccensis","K213236","species","firmicutes","Streptococcus moroccensis","","Streptococcus","moroccensis",NA,"species","1451356","Hybrid_PCR_Hybridization",1
+"1451357","Streptococcus rifensis","K213236","species","firmicutes","Streptococcus rifensis","","Streptococcus","rifensis",NA,"species","1451357","Hybrid_PCR_Hybridization",1
+"1452","Bacillus atrophaeus","K181663, K213236","species","firmicutes","Bacillus atrophaeus","","Bacillus","atrophaeus",NA,"species","1452","Hybrid_PCR_Hybridization",2
+"145391","Staphylococcus hominis subsp. hominis","K181663","subspecies","firmicutes","Staphylococcus hominis subsp. hominis","","Staphylococcus","hominis","subsp. hominis","subspecies","145391","Hybrid_PCR_Hybridization",1
+"145393","Staphylococcus hominis subsp. novobiosepticus","K181663, K213236","subspecies","firmicutes","Staphylococcus hominis subsp. novobiosepticus","","Staphylococcus","hominis","subsp. novobiosepticus","subspecies","145393","Hybrid_PCR_Hybridization",2
+"1458253","Streptococcus dentisani","K213236","subspecies","firmicutes","Streptococcus oralis subsp. dentisani","","Streptococcus","oralis","subsp. dentisani","subspecies","1458253","Hybrid_PCR_Hybridization",1
+"1463165","Klebsiella quasipneumoniae","K191288, K193519, K213236","species","enterobacteria","Klebsiella quasipneumoniae","","Klebsiella","quasipneumoniae",NA,"species","1463165","Hybrid_PCR_Hybridization",3
+"1469425","Streptococcus tangierensis","K213236","species","firmicutes","Streptococcus tangierensis","","Streptococcus","tangierensis",NA,"species","1469425","Hybrid_PCR_Hybridization",1
+"1469428","Streptococcus cameli","K213236","species","firmicutes","Streptococcus cameli","","Streptococcus","cameli",NA,"species","1469428","Hybrid_PCR_Hybridization",1
+"1485952","Metakosakonia massiliensis","K193519","species","enterobacteria","Phytobacter massiliensis","","Phytobacter","massiliensis",NA,"species","1485952","Hybrid_PCR_Hybridization",1
+"149016","Streptococcus urinalis","K213236","species","firmicutes","Streptococcus urinalis","","Streptococcus","urinalis",NA,"species","149016","Hybrid_PCR_Hybridization",1
+"149391","Salmonella enterica serovar Braenderup","K213236","","enterobacteria","Salmonella enterica subsp. enterica serovar Braenderup","","Salmonella","enterica","subsp. enterica serovar Braenderup","subspecies","59201","Hybrid_PCR_Hybridization",1
+"149539","Salmonella enterica serovar Enteritidis","K213236","","enterobacteria","Salmonella enterica subsp. enterica serovar Enteritidis","","Salmonella","enterica","subsp. enterica serovar Enteritidis","subspecies","59201","Hybrid_PCR_Hybridization",1
+"1496","Clostridioides difficile","K171441, K170491, K132726, K132235, K130470, K123197, K113433, K110203, K110012, K100818, K133936, K123355, K172569, K171770, K232092, K140377, K140407, K210385, K212427","species","firmicutes","Clostridioides difficile","","Clostridioides","difficile",NA,"species","1496","Hybrid_PCR_Hybridization / Other_Amplification / PCR",19
+"150052","Yersinia enterocolitica subsp. enterocolitica","K220062","subspecies","g-proteobacteria","Yersinia enterocolitica subsp. enterocolitica","","Yersinia","enterocolitica","subsp. enterocolitica","subspecies","150052","Hybrid_PCR_Hybridization",1
+"150053","Yersinia enterocolitica subsp. palearctica","K220062","subspecies","g-proteobacteria","Yersinia enterocolitica subsp. palearctica","","Yersinia","enterocolitica","subsp. palearctica","subspecies","150053","Hybrid_PCR_Hybridization",1
+"150055","Streptococcus luteciae","K213236","species","firmicutes","Streptococcus lutetiensis","","Streptococcus","lutetiensis",NA,"species","150055","Hybrid_PCR_Hybridization",1
+"150056","Staphylococcus fleuretti","K152470, K213236","species","firmicutes","Mammaliicoccus fleurettii","","Mammaliicoccus","fleurettii",NA,"species","150056","Hybrid_PCR_Hybridization",2
+"1501662","Streptococcus parasuis","K213236","species","firmicutes","Streptococcus parasuis","","Streptococcus","parasuis",NA,"species","1501662","Hybrid_PCR_Hybridization",1
+"1530123","Acinetobacter seifertii","K193519","species","g-proteobacteria","Acinetobacter seifertii","","Acinetobacter","seifertii",NA,"species","1530123","Hybrid_PCR_Hybridization",1
+"1547447","Streptococcus oricebi","K213236","species","firmicutes","Streptococcus oricebi","","Streptococcus","oricebi",NA,"species","1547447","Hybrid_PCR_Hybridization",1
+"155085","Staphylococcus lutrae","K152470, K193519, K213236","species","firmicutes","Staphylococcus lutrae","","Staphylococcus","lutrae",NA,"species","155085","Hybrid_PCR_Hybridization",3
+"155322","Bacillus toyonensis","K213236","species","firmicutes","Bacillus toyonensis","","Bacillus","toyonensis",NA,"species","155322","Hybrid_PCR_Hybridization",1
+"155680","Streptococcus entericus","K213236","species","firmicutes","Streptococcus entericus","","Streptococcus","entericus",NA,"species","155680","Hybrid_PCR_Hybridization",1
+"156978","Corynebacterium imitans","K181663","species","high G+C Gram-positive bacteria","Corynebacterium imitans","","Corynebacterium","imitans",NA,"species","156978","Hybrid_PCR_Hybridization",1
+"1570291","Ebola virus","K163522","isolate","viruses","Ebola virus","","Ebola","virus",NA,"species","3052462","Hybrid_PCR_Hybridization",1
+"1578","Lactobacillus","K181663","genus","firmicutes","Lactobacillus","","Lactobacillus",NA,NA,"genus","1578","Hybrid_PCR_Hybridization",1
+"1579424","Streptococcus azizii","K213236","species","firmicutes","Streptococcus azizii","","Streptococcus","azizii",NA,"species","1579424","Hybrid_PCR_Hybridization",1
+"1581472","Streptococcus panodentis","K213236","species","firmicutes","Streptococcus panodentis","","Streptococcus","panodentis",NA,"species","1581472","Hybrid_PCR_Hybridization",1
+"1582","Lactobacillus casei","K181663","species","firmicutes","Lacticaseibacillus casei","","Lacticaseibacillus","casei",NA,"species","1582","Hybrid_PCR_Hybridization",1
+"158484","Cedecea davisae","K193519","species","enterobacteria","Cedecea davisae","","Cedecea","davisae",NA,"species","158484","Hybrid_PCR_Hybridization",1
+"158836","Enterobacter hormaechei","K193519, K213236","species","enterobacteria","Enterobacter hormaechei","CDC Enteric Group 75","Enterobacter","hormaechei",NA,"species","158836","Hybrid_PCR_Hybridization",2
+"158852","Trabulsiella guamensis","K193519","species","enterobacteria","Trabulsiella guamensis","","Trabulsiella","guamensis",NA,"species","158852","Hybrid_PCR_Hybridization",1
+"158877","Yokenella regensburgei","K193519","species","enterobacteria","Yokenella regensburgei","Enteric Group 45","Yokenella","regensburgei",NA,"species","158877","Hybrid_PCR_Hybridization",1
+"1596","Lactobacillus gasseri","K190452","species","firmicutes","Lactobacillus gasseri","","Lactobacillus","gasseri",NA,"species","1596","Hybrid_PCR_Hybridization",1
+"1597","Lactobacillus paracasei","K181663","species","firmicutes","Lacticaseibacillus paracasei","","Lacticaseibacillus","paracasei",NA,"species","1597","Hybrid_PCR_Hybridization",1
+"160386","Corynebacterium casei","K181663","species","high G+C Gram-positive bacteria","Corynebacterium casei","","Corynebacterium","casei",NA,"species","160386","Hybrid_PCR_Hybridization",1
+"1607738","Staphylococcus argensis","K213236","species","firmicutes","Staphylococcus argensis","","Staphylococcus","argensis",NA,"species","1607738","Hybrid_PCR_Hybridization",1
+"161879","Corynebacterium kroppenstedtii","K181663","species","high G+C Gram-positive bacteria","Corynebacterium kroppenstedtii","","Corynebacterium","kroppenstedtii",NA,"species","161879","Hybrid_PCR_Hybridization",1
+"162145","Human Metapneumovirus","K132200, K112490, K131813, K180966, K181324, K190222, K213954, K233100, K172629, K163636, K113731, K120267, K123620, K170604, K152579, K161573, K233410, K143653, K112781, K103776, K173171, K171974, K202196","isolate","viruses","human metapneumovirus","","human","metapneumovirus",NA,"species","3048148","Hybrid_PCR_Hybridization / PCR",23
+"1637","Listeria","K181663","genus","firmicutes","Listeria","","Listeria",NA,NA,"genus","1637","Hybrid_PCR_Hybridization",1
+"1638","Listeria ivanovii","K181663","species","firmicutes","Listeria ivanovii","","Listeria","ivanovii",NA,"species","1638","Hybrid_PCR_Hybridization",1
+"1639","Listeria monocytogenes","K143171, K181663, K193519, K200010, K242256","species","firmicutes","Listeria monocytogenes","","Listeria","monocytogenes",NA,"species","1639","Hybrid_PCR_Hybridization",5
+"1640","Listeria seeligeri","K181663","species","firmicutes","Listeria seeligeri","","Listeria","seeligeri",NA,"species","1640","Hybrid_PCR_Hybridization",1
+"1642","Listeria innocua","K181663","species","firmicutes","Listeria innocua","","Listeria","innocua",NA,"species","1642","Hybrid_PCR_Hybridization",1
+"1643","Listeria welshimeri","K181663","species","firmicutes","Listeria welshimeri","","Listeria","welshimeri",NA,"species","1643","Hybrid_PCR_Hybridization",1
+"1648923","Bacillus paralicheniformis","K213236","species","firmicutes","Bacillus paralicheniformis","","Bacillus","paralicheniformis",NA,"species","1648923","Hybrid_PCR_Hybridization",1
+"1654388","Staphylococcus schweitzeri","K213236","species","firmicutes","Staphylococcus schweitzeri","","Staphylococcus","schweitzeri",NA,"species","1654388","Hybrid_PCR_Hybridization",1
+"165758","Streptococcus gallinaceus","K213236","species","firmicutes","Streptococcus gallinaceus","","Streptococcus","gallinaceus",NA,"species","165758","Hybrid_PCR_Hybridization",1
+"169066","Human Rhinovirus","K113731, K230719, K242353","species","viruses","Human rhinovirus sp.","","Human","rhinovirus","sp.","species","169066","Hybrid_PCR_Hybridization / PCR",3
+"169292","Corynebacterium aurimucosum","K181663","species","high G+C Gram-positive bacteria","Corynebacterium aurimucosum","","Corynebacterium","aurimucosum",NA,"species","169292","Hybrid_PCR_Hybridization",1
+"170573","Staphylococcus pettenkoferi","K152470, K181663, K193519, K213236","species","firmicutes","Staphylococcus pettenkoferi","","Staphylococcus","pettenkoferi",NA,"species","170573","Hybrid_PCR_Hybridization",4
+"1716","Corynebacterium","K181663","genus","high G+C Gram-positive bacteria","Corynebacterium","","Corynebacterium",NA,NA,"genus","1716","Hybrid_PCR_Hybridization",1
+"1719","Corynebacterium pseudotuberculosis","K181663","species","high G+C Gram-positive bacteria","Corynebacterium pseudotuberculosis","","Corynebacterium","pseudotuberculosis",NA,"species","1719","Hybrid_PCR_Hybridization",1
+"1747","Cutibacterium acnes","K181663","species","high G+C Gram-positive bacteria","Cutibacterium acnes","","Cutibacterium","acnes",NA,"species","1747","Hybrid_PCR_Hybridization",1
+"176090","Streptococcus sinensis","K213236","species","firmicutes","Streptococcus sinensis","","Streptococcus","sinensis",NA,"species","176090","Hybrid_PCR_Hybridization",1
+"182337","Erwinia billingiae","K193519","species","g-proteobacteria","Erwinia billingiae","","Erwinia","billingiae",NA,"species","182337","Hybrid_PCR_Hybridization",1
+"183417","Proteus hauseri","K193519, K213236","species","g-proteobacteria","Proteus hauseri","","Proteus","hauseri",NA,"species","183417","Hybrid_PCR_Hybridization",2
+"184072","Cosenzaea myxofaciens","K193519","species","g-proteobacteria","Proteus myxofaciens","","Proteus","myxofaciens",NA,"species","184072","Hybrid_PCR_Hybridization",1
+"184246","Streptococcus constellatus subsp. constellatus","K181663","subspecies","firmicutes","Streptococcus constellatus subsp. constellatus","","Streptococcus","constellatus","subsp. constellatus","subspecies","184246","Hybrid_PCR_Hybridization",1
+"184250","Streptococcus constellatus subsp. pharyngis","K181663","subspecies","firmicutes","Streptococcus constellatus subsp. pharyngis","","Streptococcus","constellatus","subsp. pharyngis","subspecies","184250","Hybrid_PCR_Hybridization",1
+"1868658","Human Astrovirus","K181427","species","viruses","Human astrovirus","","Human","astrovirus",NA,"species","1868658","Hybrid_PCR_Hybridization",1
+"1888195","Streptococcus himalayensis","K213236","species","firmicutes","Streptococcus himalayensis","","Streptococcus","himalayensis",NA,"species","1888195","Hybrid_PCR_Hybridization",1
+"1891762","BKV","K203220, K202215","species","viruses","Betapolyomavirus hominis","","Betapolyomavirus","hominis",NA,"species","1891762","Hybrid_PCR_Hybridization",2
+"194","Campylobacter","K243813","genus","e-proteobacteria","Campylobacter","","Campylobacter",NA,NA,"genus","194","Hybrid_PCR_Hybridization",1
+"195","Campylobacter coli","K121894, K123274, K140083, K140377, K140407, K163571, K180041, K182703, K220062","species","e-proteobacteria","Campylobacter coli","","Campylobacter","coli",NA,"species","195","Hybrid_PCR_Hybridization / PCR",9
+"195482","Cryptosporidium canis","K220062","species","apicomplexans","Cryptosporidium canis","","Cryptosporidium","canis",NA,"species","195482","Hybrid_PCR_Hybridization",1
+"197","Campylobacter jejuni","K121894, K123274, K140083, K140377, K140407, K163571, K180041, K182703, K220062","species","e-proteobacteria","Campylobacter jejuni","","Campylobacter","jejuni",NA,"species","197","Hybrid_PCR_Hybridization / PCR",9
+"197575","Haemophilus aegyptius","K193519","species","g-proteobacteria","Haemophilus aegyptius","Koch-Weeks bacillus","Haemophilus","aegyptius",NA,"species","197575","Hybrid_PCR_Hybridization",1
+"197614","Streptococcus pasteurianus","K213236","species","firmicutes","Streptococcus pasteurianus","","Streptococcus","pasteurianus",NA,"species","197614","Hybrid_PCR_Hybridization",1
+"201","Campylobacter lari","K121894, K140083, K140377, K182703","species","e-proteobacteria","Campylobacter lari","","Campylobacter","lari",NA,"species","201","Hybrid_PCR_Hybridization",4
+"2058152","Klebsiella grimontii","K193519","species","enterobacteria","Klebsiella grimontii","","Klebsiella","grimontii",NA,"species","2058152","Hybrid_PCR_Hybridization",1
+"208223","Kosakonia cowanii","K193519","species","enterobacteria","Kosakonia cowanii","NIH group 42","Kosakonia","cowanii",NA,"species","208223","Hybrid_PCR_Hybridization",1
+"208224","Enterobacter kobei","K193519","species","enterobacteria","Enterobacter kobei","","Enterobacter","kobei",NA,"species","208224","Hybrid_PCR_Hybridization",1
+"208962","Escherichia albertii","K193519","species","enterobacteria","Escherichia albertii","","Escherichia","albertii",NA,"species","208962","Hybrid_PCR_Hybridization",1
+"2097","Mycoplasma genitalium","K240197, K202977, K190433, K243410","species","bacteria","Mycoplasmoides genitalium","","Mycoplasmoides","genitalium",NA,"species","2097","Hybrid_PCR_Hybridization",4
+"2104","Mycoplasmoides pneumoniae","K160829, K152800","species","bacteria","Mycoplasmoides pneumoniae","Filterable agent of primary atypical pneumonia","Mycoplasmoides","pneumoniae",NA,"species","2104","Other_Amplification",2
+"214473","Staphylococcus nepalensis","K152470, K193519, K213236","species","firmicutes","Staphylococcus nepalensis","","Staphylococcus","nepalensis",NA,"species","214473","Hybrid_PCR_Hybridization",3
+"227866","Bacillus tequilensis","K213236","species","firmicutes","Bacillus tequilensis","","Bacillus","tequilensis",NA,"species","227866","Hybrid_PCR_Hybridization",1
+"231233","Streptococcus devriesei","K213236","species","firmicutes","Streptococcus devriesei","","Streptococcus","devriesei",NA,"species","231233","Hybrid_PCR_Hybridization",1
+"237895","Cryptosporidium hominis","K121894, K140377, K180041, K220062, K220193","species","apicomplexans","Cryptosporidium hominis","","Cryptosporidium","hominis",NA,"species","237895","Hybrid_PCR_Hybridization",5
+"244366","Klebsiella variicola","K191288, K191967, K193519, K213236","species","enterobacteria","Klebsiella variicola","","Klebsiella","variicola",NA,"species","244366","Hybrid_PCR_Hybridization",4
+"246432","Staphylococcus equorum","K152470, K193519, K213236","species","firmicutes","Staphylococcus equorum","","Staphylococcus","equorum",NA,"species","246432","Hybrid_PCR_Hybridization",3
+"2509511","Sarbecovirus","K213804","subgenus","viruses","Sarbecovirus","","Sarbecovirus",NA,NA,"subgenus","2509511","Hybrid_PCR_Hybridization",1
+"254785","Streptococcus halichoeri","K213236","species","firmicutes","Streptococcus halichoeri","","Streptococcus","halichoeri",NA,"species","254785","Hybrid_PCR_Hybridization",1
+"254786","Streptococcus castoreus","K213236","species","firmicutes","Streptococcus castoreus","","Streptococcus","castoreus",NA,"species","254786","Hybrid_PCR_Hybridization",1
+"2560525","Human Parainfluenza virus type 2","K141927, K132238, K153223, K172282, K202196, K181324","isolate","viruses","Human orthorubulavirus 2","","Human","orthorubulavirus","2","species","3052557","Hybrid_PCR_Hybridization / PCR",6
+"2560526","Human parainfluenza virus 4","K172282, K202196, K181324","isolate","viruses","Human orthorubulavirus 4","","Human","orthorubulavirus","4","species","3052556","Hybrid_PCR_Hybridization / PCR",3
+"257758","Streptococcus pseudopneumoniae","K193519, K213236","species","firmicutes","Streptococcus pseudopneumoniae","","Streptococcus","pseudopneumoniae",NA,"species","257758","Hybrid_PCR_Hybridization",2
+"263","Francisella tularensis","K163522, K231336","species","g-proteobacteria","Francisella tularensis","","Francisella","tularensis",NA,"species","263","Hybrid_PCR_Hybridization",2
+"269666","Streptococcus marimammalium","K213236","species","firmicutes","Streptococcus marimammalium","","Streptococcus","marimammalium",NA,"species","269666","Hybrid_PCR_Hybridization",1
+"2697049","SARS-CoV-2","K202641, K221925, K230440, K241652, K233410, K211079, K212147, K213804, K223783, K230719, K230956, K231481, K241580, K241806, K202196, K213954, K222736, K223591, K233100, K233453, K242353","isolate","viruses","Severe acute respiratory syndrome coronavirus 2","","Severe","acute","respiratory syndrome coronavirus 2","species","3418604","Hybrid_PCR_Hybridization / PCR",21
+"2702","Gardnerella vaginalis","K190452, K201017, K223653, K243725","species","high G+C Gram-positive bacteria","Gardnerella vaginalis","","Gardnerella","vaginalis",NA,"species","2702","Hybrid_PCR_Hybridization",4
+"277944","Coronavirus NL63","K192485, K120267, K123620, K170604, K173171, K181324, K202196, K183597, K233100","isolate","viruses","Human coronavirus NL63","","Human","coronavirus","NL63","species","3433809","Hybrid_PCR_Hybridization / PCR",9
+"28035","Staphylococcus lugdunensis","K152470, K181663, K193519, K200010, K213236","species","firmicutes","Staphylococcus lugdunensis","","Staphylococcus","lugdunensis",NA,"species","28035","Hybrid_PCR_Hybridization",5
+"28037","Streptococcus mitis","K143171, K181663, K193519, K213236","species","firmicutes","Streptococcus mitis","","Streptococcus","mitis",NA,"species","28037","Hybrid_PCR_Hybridization",4
+"28080","Campylobacter upsaliensis","K140407, K220062","species","e-proteobacteria","Campylobacter upsaliensis","","Campylobacter","upsaliensis",NA,"species","28080","Hybrid_PCR_Hybridization / PCR",2
+"28090","Acinetobacter lwoffii","K181663","species","g-proteobacteria","Acinetobacter lwoffii","","Acinetobacter","lwoffii",NA,"species","28090","Hybrid_PCR_Hybridization",1
+"28141","Cronobacter sakazakii","K193519, K213236","species","enterobacteria","Cronobacter sakazakii","","Cronobacter","sakazakii",NA,"species","28141","Hybrid_PCR_Hybridization",2
+"28147","Salmonella enterica serovar Oranienburg","K213236","","enterobacteria","Salmonella enterica subsp. enterica serovar Oranienburg","","Salmonella","enterica","subsp. enterica serovar Oranienburg","subspecies","59201","Hybrid_PCR_Hybridization",1
+"28151","Serratia proteamaculans","K213236","species","g-proteobacteria","Serratia proteamaculans","","Serratia","proteamaculans",NA,"species","28151","Hybrid_PCR_Hybridization",1
+"282078","Streptococcus orisuis","K213236","species","firmicutes","Streptococcus orisuis","","Streptococcus","orisuis",NA,"species","282078","Hybrid_PCR_Hybridization",1
+"28284","Human adenovirus 40","K180041","isolate","viruses","Human adenovirus 40","","Human","adenovirus","40","species","3241426","Hybrid_PCR_Hybridization",1
+"283734","Staphylococcus pseudintermedius","K152470, K193519, K213236","species","firmicutes","Staphylococcus pseudintermedius","","Staphylococcus","pseudintermedius",NA,"species","283734","Hybrid_PCR_Hybridization",3
+"28450","Burkholderia pseudomallei","K231336","species","b-proteobacteria","Burkholderia pseudomallei","","Burkholderia","pseudomallei",NA,"species","28450","Hybrid_PCR_Hybridization",1
+"286","Pseudomonas","K181663","genus","g-proteobacteria","Pseudomonas","RNA similarity group I","Pseudomonas",NA,NA,"genus","286","Hybrid_PCR_Hybridization",1
+"287","Pseudomonas aeruginosa","K143171, K152614, K172708, K173263, K180966, K181324, K181663, K190222, K190275, K190341, K191288, K191967, K193519, K200010, K213236","species","g-proteobacteria","Pseudomonas aeruginosa","","Pseudomonas","aeruginosa",NA,"species","287","Hybrid_PCR_Hybridization / PCR",15
+"28875","Rotavirus A","K121894, K140377, K140407, K180041, K181427, K220062","isolate","viruses","Rotavirus A","","Rotavirus","A",NA,"species","3432193","Hybrid_PCR_Hybridization / PCR",6
+"28901","Salmonella enterica","K182703, K193519, K213236, K220062","species","enterobacteria","Salmonella enterica","","Salmonella","enterica",NA,"species","28901","Hybrid_PCR_Hybridization",4
+"290028","Human coronavirus HKU1","K202196, K183597, K233100","isolate","viruses","Human coronavirus HKU1","","Human","coronavirus","HKU1","species","3433758","Hybrid_PCR_Hybridization",3
+"291112","Photorhabdus asymbiotica","K193519","species","g-proteobacteria","Photorhabdus asymbiotica","","Photorhabdus","asymbiotica",NA,"species","291112","Hybrid_PCR_Hybridization",1
+"2918835","Adenovirus species C","K113731, K213236","species","cyanobacteria","Petrachloros mirabilis","","Petrachloros","mirabilis",NA,"species","2918835","Hybrid_PCR_Hybridization",2
+"29378","Staphylococcus arlettae","K213236","species","firmicutes","Staphylococcus arlettae","","Staphylococcus","arlettae",NA,"species","29378","Hybrid_PCR_Hybridization",1
+"29379","Staphylococcus auricularis","K152470, K181663, K193519, K213236","species","firmicutes","Staphylococcus auricularis","","Staphylococcus","auricularis",NA,"species","29379","Hybrid_PCR_Hybridization",4
+"29380","Staphylococcus caprae","K152470, K193519, K213236","species","firmicutes","Staphylococcus caprae","","Staphylococcus","caprae",NA,"species","29380","Hybrid_PCR_Hybridization",3
+"29382","Staphylococcus cohnii","K152470, K181663, K193519, K213236","species","firmicutes","Staphylococcus cohnii","","Staphylococcus","cohnii",NA,"species","29382","Hybrid_PCR_Hybridization",4
+"29384","Staphylococcus kloosii","K152470, K213236","species","firmicutes","Staphylococcus kloosii","","Staphylococcus","kloosii",NA,"species","29384","Hybrid_PCR_Hybridization",2
+"29385","Staphylococcus saprophyticus","K152470, K181663, K193519, K213236","species","firmicutes","Staphylococcus saprophyticus","","Staphylococcus","saprophyticus",NA,"species","29385","Hybrid_PCR_Hybridization",4
+"29388","Staphylococcus capitis","K152470, K181663, K193519, K213236","species","firmicutes","Staphylococcus capitis","","Staphylococcus","capitis",NA,"species","29388","Hybrid_PCR_Hybridization",4
+"29389","Streptococcus alactolyticus","K213236","species","firmicutes","Streptococcus alactolyticus","","Streptococcus","alactolyticus",NA,"species","29389","Hybrid_PCR_Hybridization",1
+"29484","Yersinia frederiksenii","K193519","species","g-proteobacteria","Yersinia frederiksenii","","Yersinia","frederiksenii",NA,"species","29484","Hybrid_PCR_Hybridization",1
+"2954378","Coronavirus HKU1","K192485, K120267, K170604, K173171, K181324","species","b-proteobacteria","Candidatus Accumulibacter adiacens","","Candidatus","Accumulibacter","adiacens","species","2954378","Hybrid_PCR_Hybridization / PCR",5
+"299767","Enterobacter ludwigii","K193519, K213236","species","enterobacteria","Enterobacter ludwigii","","Enterobacter","ludwigii",NA,"species","299767","Hybrid_PCR_Hybridization",2
+"3037664","Human Metapneumovirus A","K192485","isolate","viruses","Human metapneumovirus A","","Human","metapneumovirus","A","species","3048148","Hybrid_PCR_Hybridization",1
+"3037665","Human Metapneumovirus B","K192485","isolate","viruses","Human metapneumovirus B","","Human","metapneumovirus","B","species","3048148","Hybrid_PCR_Hybridization",1
+"308354","Staphylococcus simiae","K152470, K213236","species","firmicutes","Staphylococcus simiae","","Staphylococcus","simiae",NA,"species","308354","Hybrid_PCR_Hybridization",2
+"310047","Cryptosporidium bovis","K220062","species","apicomplexans","Cryptosporidium bovis","","Cryptosporidium","bovis",NA,"species","310047","Hybrid_PCR_Hybridization",1
+"313439","Streptococcus massiliensis","K213236","species","firmicutes","Streptococcus massiliensis","","Streptococcus","massiliensis",NA,"species","313439","Hybrid_PCR_Hybridization",1
+"315405","Streptococcus gallolyticus","K181663, K193519, K213236","species","firmicutes","Streptococcus gallolyticus","","Streptococcus","gallolyticus",NA,"species","315405","Hybrid_PCR_Hybridization",3
+"31631","Human coronavirus OC43","K202196, K183597, K233100","isolate","viruses","Human coronavirus OC43","","Human","coronavirus","OC43","species","3433757","Hybrid_PCR_Hybridization",3
+"33028","Staphylococcus saccharolyticus","K152470, K181663, K213236","species","firmicutes","Staphylococcus saccharolyticus","","Staphylococcus","saccharolyticus",NA,"species","33028","Hybrid_PCR_Hybridization",3
+"33945","Enterococcus avium","K181663, K213236","species","firmicutes","Enterococcus avium","","Enterococcus","avium",NA,"species","33945","Hybrid_PCR_Hybridization",2
+"34038","Rahnella aquatilis","K193519","species","g-proteobacteria","Rahnella aquatilis","","Rahnella","aquatilis",NA,"species","34038","Hybrid_PCR_Hybridization",1
+"3409772","Streptococcus mitis group","K181663","species group","firmicutes","Streptococcus mitis group","","Streptococcus","mitis","group","species group","3409772","Hybrid_PCR_Hybridization",1
+"354276","Enterobacter cloacae complex","K180966, K181324, K190222, K190341, K191967, K193519, K200010, K213236","species group","enterobacteria","Enterobacter cloacae complex","","Enterobacter","cloacae","complex","species group","354276","Hybrid_PCR_Hybridization / PCR",8
+"361101","Streptococcus pseudoporcinus","K213236","species","firmicutes","Streptococcus pseudoporcinus","","Streptococcus","pseudoporcinus",NA,"species","361101","Hybrid_PCR_Hybridization",1
+"36330","Plasmodium ovale","K220870, K243463","species","apicomplexans","Plasmodium ovale","malaria parasite P. ovale","Plasmodium","ovale",NA,"species","36330","Hybrid_PCR_Hybridization / PCR",2
+"36911","Candida lusitaniae","K182690, K240627","species","budding yeasts & allies","Clavispora lusitaniae","","Clavispora","lusitaniae",NA,"species","36911","Hybrid_PCR_Hybridization",2
+"37124","Chikungunya virus","K220870, K243463","isolate","viruses","Chikungunya virus","","Chikungunya","virus",NA,"species","3426298","Hybrid_PCR_Hybridization / PCR",2
+"37734","Enterococcus casseliflavus","K181663, K213236","species","firmicutes","Enterococcus casseliflavus","","Enterococcus","casseliflavus",NA,"species","37734","Hybrid_PCR_Hybridization",2
+"37769","Cryptococcus gattii","K182690, K193519","species","basidiomycete fungi","Cryptococcus gattii","","Cryptococcus","gattii",NA,"species","37769","Hybrid_PCR_Hybridization",2
+"38286","Corynebacterium afermentans","K181663","species","high G+C Gram-positive bacteria","Corynebacterium afermentans","","Corynebacterium","afermentans",NA,"species","38286","Hybrid_PCR_Hybridization",1
+"38289","Corynebacterium jeikeium","K181663","species","high G+C Gram-positive bacteria","Corynebacterium jeikeium","","Corynebacterium","jeikeium",NA,"species","38289","Hybrid_PCR_Hybridization",1
+"38304","Corynebacterium tuberculostearicum","K181663","species","high G+C Gram-positive bacteria","Corynebacterium tuberculostearicum","","Corynebacterium","tuberculostearicum",NA,"species","38304","Hybrid_PCR_Hybridization",1
+"384613","Streptococcus dentirousetti","K213236","species","firmicutes","Streptococcus dentirousetti","","Streptococcus","dentirousetti",NA,"species","384613","Hybrid_PCR_Hybridization",1
+"39831","Klebsiella pneumoniae subsp. rhinoscleromatis","K213236","subspecies","enterobacteria","Klebsiella pneumoniae subsp. rhinoscleromatis","","Klebsiella","pneumoniae","subsp. rhinoscleromatis","subspecies","39831","Hybrid_PCR_Hybridization",1
+"40324","Stenotrophomonas maltophilia","K181663, K191967, K193519, K200010, K213236","species","g-proteobacteria","Stenotrophomonas maltophilia","","Stenotrophomonas","maltophilia",NA,"species","40324","Hybrid_PCR_Hybridization",5
+"413502","Cronobacter turicensis","K193519","species","enterobacteria","Cronobacter turicensis","","Cronobacter","turicensis",NA,"species","413502","Hybrid_PCR_Hybridization",1
+"413503","Cronobacter malonaticus","K193519","species","enterobacteria","Cronobacter malonaticus","","Cronobacter","malonaticus",NA,"species","413503","Hybrid_PCR_Hybridization",1
+"417368","Enterococcus thailandicus","K213236","species","firmicutes","Enterococcus thailandicus","","Enterococcus","thailandicus",NA,"species","417368","Hybrid_PCR_Hybridization",1
+"41857","Influenza A virus H3N2","K213954","isolate","viruses","Influenza A virus H3N2","","Influenza","A","virus H3N2","serotype","119210","PCR",1
+"41997","Enterococcus saccharolyticus","K181663, K213236","species","firmicutes","Enterococcus saccharolyticus","","Enterococcus","saccharolyticus",NA,"species","41997","Hybrid_PCR_Hybridization",2
+"42068","Pneumocystis jirovecii","K191967","species","ascomycete fungi","Pneumocystis jirovecii","","Pneumocystis","jirovecii",NA,"species","42068","Hybrid_PCR_Hybridization",1
+"42374","Candida dubliniensis","K182690, K201017, K212213, K223653, K240627, K243725","species","budding yeasts & allies","Candida dubliniensis","","Candida","dubliniensis",NA,"species","42374","Hybrid_PCR_Hybridization",6
+"425474","Staphylococcus pseudolugdunensis","K213236","species","firmicutes","Staphylococcus pseudolugdunensis","","Staphylococcus","pseudolugdunensis",NA,"species","425474","Hybrid_PCR_Hybridization",1
+"42858","Staphylococcus lentus","K152470, K193519, K213236","species","firmicutes","Mammaliicoccus lentus","","Mammaliicoccus","lentus",NA,"species","42858","Hybrid_PCR_Hybridization",3
+"42906","Serratia entomophila","K193519","species","g-proteobacteria","Serratia entomophila","","Serratia","entomophila",NA,"species","42906","Hybrid_PCR_Hybridization",1
+"43765","Corynebacterium amycolatum","K181663","species","high G+C Gram-positive bacteria","Corynebacterium amycolatum","","Corynebacterium","amycolatum",NA,"species","43765","Hybrid_PCR_Hybridization",1
+"43768","Corynebacterium matruchotii","K181663","species","high G+C Gram-positive bacteria","Corynebacterium matruchotii","","Corynebacterium","matruchotii",NA,"species","43768","Hybrid_PCR_Hybridization",1
+"43770","Corynebacterium striatum","K181663","species","high G+C Gram-positive bacteria","Corynebacterium striatum","","Corynebacterium","striatum",NA,"species","43770","Hybrid_PCR_Hybridization",1
+"43771","Corynebacterium urealyticum","K181663","species","high G+C Gram-positive bacteria","Corynebacterium urealyticum","","Corynebacterium","urealyticum",NA,"species","43771","Hybrid_PCR_Hybridization",1
+"439219","Streptococcus henryi","K213236","species","firmicutes","Streptococcus henryi","","Streptococcus","henryi",NA,"species","439219","Hybrid_PCR_Hybridization",1
+"439220","Streptococcus caballi","K213236","species","firmicutes","Streptococcus caballi","","Streptococcus","caballi",NA,"species","439220","Hybrid_PCR_Hybridization",1
+"44007","Enterococcus pseudoavium","K213236","species","firmicutes","Enterococcus pseudoavium","","Enterococcus","pseudoavium",NA,"species","44007","Hybrid_PCR_Hybridization",1
+"44008","Enterococcus cecorum","K213236","species","firmicutes","Enterococcus cecorum","","Enterococcus","cecorum",NA,"species","44008","Hybrid_PCR_Hybridization",1
+"44009","Enterococcus dispar","K213236","species","firmicutes","Enterococcus dispar","","Enterococcus","dispar",NA,"species","44009","Hybrid_PCR_Hybridization",1
+"446","Legionella pneumophila","K180966, K181324, K190222, K191967","species","g-proteobacteria","Legionella pneumophila","","Legionella","pneumophila",NA,"species","446","Hybrid_PCR_Hybridization / PCR",4
+"45634","Streptococcus cristatus","K193519, K213236","species","firmicutes","Streptococcus cristatus","","Streptococcus","cristatus",NA,"species","45634","Hybrid_PCR_Hybridization",2
+"456876","Streptococcus plurextorum","K213236","species","firmicutes","Streptococcus plurextorum","","Streptococcus","plurextorum",NA,"species","456876","Hybrid_PCR_Hybridization",1
+"45972","Staphylococcus pasteuri","K152470, K193519, K213236","species","firmicutes","Staphylococcus pasteuri","","Staphylococcus","pasteuri",NA,"species","45972","Hybrid_PCR_Hybridization",3
+"46126","Staphylococcus chromogenes","K152470, K213236","species","firmicutes","Staphylococcus chromogenes","","Staphylococcus","chromogenes",NA,"species","46126","Hybrid_PCR_Hybridization",2
+"46127","Staphylococcus felis","K152470, K213236","species","firmicutes","Staphylococcus felis","","Staphylococcus","felis",NA,"species","46127","Hybrid_PCR_Hybridization",2
+"470","Acinetobacter baumannii","K143171, K152614, K173263, K181663, K190275, K193519, K213236","species","g-proteobacteria","Acinetobacter baumannii","","Acinetobacter","baumannii",NA,"species","470","Hybrid_PCR_Hybridization",7
+"471","Acinetobacter calcoaceticus","K193519","species","g-proteobacteria","Acinetobacter calcoaceticus","","Acinetobacter","calcoaceticus",NA,"species","471","Hybrid_PCR_Hybridization",1
+"472695","Pantoea septica","K193519","species","g-proteobacteria","Pantoea septica","","Pantoea","septica",NA,"species","472695","Hybrid_PCR_Hybridization",1
+"47715","Lactobacillus rhamnosus","K181663","species","firmicutes","Lacticaseibacillus rhamnosus","","Lacticaseibacillus","rhamnosus",NA,"species","47715","Hybrid_PCR_Hybridization",1
+"47770","Lactobacillus crispatus","K190452, K201017, K223653, K243725","species","firmicutes","Lactobacillus crispatus","","Lactobacillus","crispatus",NA,"species","47770","Hybrid_PCR_Hybridization",4
+"47917","Serratia fonticola","K193519, K213236","species","g-proteobacteria","Serratia fonticola","","Serratia","fonticola",NA,"species","47917","Hybrid_PCR_Hybridization",2
+"480","Moraxella catarrhalis","K180966, K181324, K181663, K190222, K191967","species","g-proteobacteria","Moraxella catarrhalis","","Moraxella","catarrhalis",NA,"species","480","Hybrid_PCR_Hybridization / PCR",5
+"48296","Acinetobacter pittii","K193519","species","g-proteobacteria","Acinetobacter pittii","","Acinetobacter","pittii",NA,"species","48296","Hybrid_PCR_Hybridization",1
+"485","Neisseria gonorrhoeae","K111409, K132251, K200866, K151589, K140446, K191352, K200533, K110923, K173887, K132270, K202408, K121710, K190441, K190515, K231329, K230267, K240217, K240197, K210585, K220407, K202977, K193081, K200748, K243410","species","b-proteobacteria","Neisseria gonorrhoeae","","Neisseria","gonorrhoeae",NA,"species","485","Hybrid_PCR_Hybridization / PCR",24
+"487","Neisseria meningitidis","K143171, K193519, K200010, K213236","species","b-proteobacteria","Neisseria meningitidis","","Neisseria","meningitidis",NA,"species","487","Hybrid_PCR_Hybridization",4
+"488175","Streptococcus seminale","K213236","species","firmicutes","Streptococcus seminale","","Streptococcus","seminale",NA,"species","488175","Hybrid_PCR_Hybridization",1
+"4909","Pichia kudriavzevii","K173536, K143171, K181663, K182690, K193519, K200010, K201017, K212213, K213236, K223653, K240627, K243725","species","budding yeasts & allies","Pichia kudriavzevii","","Pichia","kudriavzevii",NA,"species","4909","Hybrid_PCR_Hybridization / Other_Amplification",12
+"4911","Candida kefyr","K182690, K240627","species","budding yeasts & allies","Kluyveromyces marxianus","","Kluyveromyces","marxianus",NA,"species","4911","Hybrid_PCR_Hybridization",2
+"492670","Bacillus methylotrophicus","K213236","species","firmicutes","Bacillus velezensis","","Bacillus","velezensis",NA,"species","492670","Hybrid_PCR_Hybridization",1
+"4952","Candida lipolytica","K240627","species","budding yeasts & allies","Yarrowia lipolytica","","Yarrowia","lipolytica",NA,"species","4952","Hybrid_PCR_Hybridization",1
+"4959","Candida famata","K182690, K240627","species","budding yeasts & allies","Debaryomyces hansenii","","Debaryomyces","hansenii",NA,"species","4959","Hybrid_PCR_Hybridization",2
+"498019","Candida auris","K182690, K193519, K200010, K240627","species","budding yeasts & allies","Candidozyma auris","","Candidozyma","auris",NA,"species","498019","Hybrid_PCR_Hybridization",4
+"502567","Streptococcus porci","K213236","species","firmicutes","Streptococcus porci","","Streptococcus","porci",NA,"species","502567","Hybrid_PCR_Hybridization",1
+"51288","Kluyvera ascorbata","K193519","species","enterobacteria","Kluyvera ascorbata","","Kluyvera","ascorbata",NA,"species","51288","Hybrid_PCR_Hybridization",1
+"517","Bordetella","K163626, K143206, K170284, K133673, K173498, K183223","genus","b-proteobacteria","Bordetella","","Bordetella",NA,NA,"genus","517","Hybrid_PCR_Hybridization / Other_Amplification",6
+"519","Bordetella parapertussis","K202196, K213954","species","b-proteobacteria","Bordetella parapertussis","","Bordetella","parapertussis",NA,"species","519","Hybrid_PCR_Hybridization / PCR",2
+"520","Bordetella pertussis","K183597, K202196, K213954, K233100","species","b-proteobacteria","Bordetella pertussis","","Bordetella","pertussis",NA,"species","520","Hybrid_PCR_Hybridization / PCR",4
+"5207","Cryptococcus neoformans","K182690, K193519","species","basidiomycete fungi","Cryptococcus neoformans","Cryptococcus neoformans serotype A","Cryptococcus","neoformans",NA,"species","5207","Hybrid_PCR_Hybridization",2
+"522262","Staphylococcus rostri","K213236","species","firmicutes","Staphylococcus rostri","","Staphylococcus","rostri",NA,"species","522262","Hybrid_PCR_Hybridization",1
+"53344","Staphylococcus delphini","K152470, K213236","species","firmicutes","Staphylococcus delphini","","Staphylococcus","delphini",NA,"species","53344","Hybrid_PCR_Hybridization",2
+"53345","Enterococcus durans","K213236","species","firmicutes","Enterococcus durans","","Enterococcus","durans",NA,"species","53345","Hybrid_PCR_Hybridization",1
+"53374","Corynebacterium coyleae","K181663","species","high G+C Gram-positive bacteria","Corynebacterium coyleae","","Corynebacterium","coyleae",NA,"species","53374","Hybrid_PCR_Hybridization",1
+"539813","Enterobacter mori","K193519","species","enterobacteria","Enterobacter mori","","Enterobacter","mori",NA,"species","539813","Hybrid_PCR_Hybridization",1
+"54291","Raoultella ornithinolytica","K191288, K193519","species","enterobacteria","Klebsiella ornithinolytica","","Klebsiella","ornithinolytica",NA,"species","54291","Hybrid_PCR_Hybridization",2
+"543","Enterobacteriaceae","K143171, K152614, K190275","family","enterobacteria","Enterobacteriaceae","enterobacteria","Enterobacteriaceae",NA,NA,"family","543","Hybrid_PCR_Hybridization",3
+"544","Citrobacter","K213236","genus","enterobacteria","Citrobacter","","Citrobacter",NA,NA,"genus","544","Hybrid_PCR_Hybridization",1
+"545","Citrobacter koseri","K181663, K191288, K193519, K213236","species","enterobacteria","Citrobacter koseri","","Citrobacter","koseri",NA,"species","545","Hybrid_PCR_Hybridization",4
+"546","Citrobacter freundii","K152614, K173263, K181663, K191288, K191967, K193519, K213236","species","enterobacteria","Citrobacter freundii","","Citrobacter","freundii",NA,"species","546","Hybrid_PCR_Hybridization",7
+"546367","Hafnia paralvei","K193519","species","g-proteobacteria","Hafnia paralvei","","Hafnia","paralvei",NA,"species","546367","Hybrid_PCR_Hybridization",1
+"54736","Salmonella bongori","K193519, K213236, K220062","species","enterobacteria","Salmonella bongori","","Salmonella","bongori",NA,"species","54736","Hybrid_PCR_Hybridization",3
+"5476","Candida albicans","K173536, K143171, K181663, K182690, K193519, K200010, K201017, K212213, K213236, K223653, K240627, K243725","species","budding yeasts & allies","Candida albicans","","Candida","albicans",NA,"species","5476","Hybrid_PCR_Hybridization / Other_Amplification",12
+"5478","Candida glabrata","K190472, K173536, K143171, K181663, K182690, K193519, K200010, K201017, K212213, K213236, K223653, K240627, K243725","species","budding yeasts & allies","Nakaseomyces glabratus","","Nakaseomyces","glabratus",NA,"species","5478","Hybrid_PCR_Hybridization / Other_Amplification",13
+"548","Enterobacter aerogenes","K152614, K173263, K181663, K213236, K180966, K181324, K190222, K191288, K193519, K200010","species","enterobacteria","Klebsiella aerogenes","","Klebsiella","aerogenes",NA,"species","548","Hybrid_PCR_Hybridization / PCR",10
+"5482","Candida tropicalis","K173536, K143171, K182690, K193519, K200010, K201017, K212213, K223653, K240627, K243725","species","budding yeasts & allies","Candida tropicalis","","Candida","tropicalis",NA,"species","5482","Hybrid_PCR_Hybridization / Other_Amplification",10
+"549","Pantoea agglomerans","K193519","species","g-proteobacteria","Pantoea agglomerans","","Pantoea","agglomerans",NA,"species","549","Hybrid_PCR_Hybridization",1
+"550","Enterobacter cloacae","K143171, K152614, K173263, K181663, K193519, K213236","species","enterobacteria","Enterobacter cloacae","","Enterobacter","cloacae",NA,"species","550","Hybrid_PCR_Hybridization",6
+"5506","Fusarium","K182690","genus","ascomycete fungi","Fusarium","","Fusarium",NA,NA,"genus","5506","Hybrid_PCR_Hybridization",1
+"55085","Streptococcus thoraltensis","K213236","species","firmicutes","Streptococcus thoraltensis","","Streptococcus","thoraltensis",NA,"species","55085","Hybrid_PCR_Hybridization",1
+"5533","Rhodotorula","K182690","genus","rust fungi & allies","Rhodotorula","","Rhodotorula",NA,NA,"genus","5533","Hybrid_PCR_Hybridization",1
+"555791","Staphylococcus massiliensis","K152470, K213236","species","firmicutes","Staphylococcus massiliensis","","Staphylococcus","massiliensis",NA,"species","555791","Hybrid_PCR_Hybridization",2
+"562","Enteroaggregative Escherichia coli","K140407, K180041, K163571, K182703, K220062, K121894, K140377, K170308, K143171, K152614, K172708, K173263, K180966, K181324, K181663, K190222, K190341, K191288, K191967, K193519, K200010, K213236, K152955, K173330, K243813","species","enterobacteria","Escherichia coli","E. coli","Escherichia","coli",NA,"species","562","Hybrid_PCR_Hybridization / PCR",25
+"563","Shimwellia blattae","K193519","species","enterobacteria","Shimwellia blattae","","Shimwellia","blattae",NA,"species","563","Hybrid_PCR_Hybridization",1
+"564","Escherichia fergusonii","K193519","species","enterobacteria","Escherichia fergusonii","","Escherichia","fergusonii",NA,"species","564","Hybrid_PCR_Hybridization",1
+"564424","Cryptosporidium cuniculus","K220062","species","apicomplexans","Cryptosporidium cuniculus","","Cryptosporidium","cuniculus",NA,"species","564424","Hybrid_PCR_Hybridization",1
+"566","Pseudescherichia vulneris","K193519","species","enterobacteria","Pseudescherichia vulneris","CDC Enteric Group 1","Pseudescherichia","vulneris",NA,"species","566","Hybrid_PCR_Hybridization",1
+"566027","Micrococcus yunnanensis","K181663","species","high G+C Gram-positive bacteria","Micrococcus yunnanensis","","Micrococcus","yunnanensis",NA,"species","566027","Hybrid_PCR_Hybridization",1
+"569","Hafnia alvei","K193519","species","g-proteobacteria","Hafnia alvei","","Hafnia","alvei",NA,"species","569","Hybrid_PCR_Hybridization",1
+"569857","Staphylococcus microti","K213236","species","firmicutes","Staphylococcus microti","","Staphylococcus","microti",NA,"species","569857","Hybrid_PCR_Hybridization",1
+"571","Klebsiella oxytoca","K143171, K152614, K173263, K180966, K181324, K181663, K190222, K190341, K191288, K191967, K193519, K200010, K213236","species","enterobacteria","Klebsiella oxytoca","","Klebsiella","oxytoca",NA,"species","571","Hybrid_PCR_Hybridization / PCR",13
+"57171","Corynebacterium mucifaciens","K181663","species","high G+C Gram-positive bacteria","Corynebacterium mucifaciens","","Corynebacterium","mucifaciens",NA,"species","57171","Hybrid_PCR_Hybridization",1
+"5722","Trichomonas vaginalis","K143329, K122062, K130268, K161182, K151565, K200436, K193081, K200748, K201017, K212213, K223653, K243410, K243725","species","trichomonads","Trichomonas vaginalis","","Trichomonas","vaginalis",NA,"species","5722","Hybrid_PCR_Hybridization",13
+"573","Klebsiella pneumoniae","K143171, K152614, K172708, K173263, K181663, K190341, K191288, K191967, K193519, K213236","species","enterobacteria","Klebsiella pneumoniae","","Klebsiella","pneumoniae",NA,"species","573","Hybrid_PCR_Hybridization",10
+"573564","Streptococcus dentapri","K213236","species","firmicutes","Streptococcus dentapri","","Streptococcus","dentapri",NA,"species","573564","Hybrid_PCR_Hybridization",1
+"574","Klebsiella pneumoniae subsp. ozaenae","K213236","subspecies","enterobacteria","Klebsiella pneumoniae subsp. ozaenae","","Klebsiella","pneumoniae","subsp. ozaenae","subspecies","574","Hybrid_PCR_Hybridization",1
+"5741","Giardia duodenalis","K220062, K182703, K121894, K140377, K140407, K180041, K181711, K220193","species","diplomonads","Giardia duodenalis","","Giardia","duodenalis",NA,"species","5741","Hybrid_PCR_Hybridization / PCR",8
+"575","Raoultella planticola","K191288, K193519","species","enterobacteria","Klebsiella planticola","","Klebsiella","planticola",NA,"species","575","Hybrid_PCR_Hybridization",2
+"5759","Entamoeba histolytica","K140377, K140407, K180041, K181711, K182703, K220062, K220193","species","eukaryotes","Entamoeba histolytica","","Entamoeba","histolytica",NA,"species","5759","Hybrid_PCR_Hybridization / PCR",7
+"577","Raoultella terrigena","K193519","species","enterobacteria","Klebsiella terrigena","","Klebsiella","terrigena",NA,"species","577","Hybrid_PCR_Hybridization",1
+"57706","Citrobacter braakii","K181663, K191288, K193519, K213236","species","enterobacteria","Citrobacter braakii","","Citrobacter","braakii",NA,"species","57706","Hybrid_PCR_Hybridization",4
+"5806","Cryptosporidium","K140407","genus","apicomplexans","Cryptosporidium","","Cryptosporidium",NA,NA,"genus","5806","PCR",1
+"5807","Cryptosporidium parvum","K121894, K140377, K180041, K181711, K220062, K220193","species","apicomplexans","Cryptosporidium parvum","","Cryptosporidium","parvum",NA,"species","5807","Hybrid_PCR_Hybridization",6
+"582","Morganella morganii","K181663, K191288, K191967, K193519, K213236","species","g-proteobacteria","Morganella morganii","","Morganella","morganii",NA,"species","582","Hybrid_PCR_Hybridization",5
+"5833","Plasmodium falciparum","K220870, K243463","species","apicomplexans","Plasmodium falciparum","malaria parasite P. falciparum","Plasmodium","falciparum",NA,"species","5833","Hybrid_PCR_Hybridization / PCR",2
+"584","Proteus mirabilis","K152614, K173263, K181663, K191288, K193519, K213236","species","g-proteobacteria","Proteus mirabilis","","Proteus","mirabilis",NA,"species","584","Hybrid_PCR_Hybridization",6
+"585","Proteus vulgaris","K181663, K193519, K213236","species","g-proteobacteria","Proteus vulgaris","","Proteus","vulgaris",NA,"species","585","Hybrid_PCR_Hybridization",3
+"5855","Plasmodium vivax","K220870, K243463","species","apicomplexans","Plasmodium vivax","malaria parasite P. vivax","Plasmodium","vivax",NA,"species","5855","Hybrid_PCR_Hybridization / PCR",2
+"586733","Staphylococcus devriesei","K213236","species","firmicutes","Staphylococcus devriesei","","Staphylococcus","devriesei",NA,"species","586733","Hybrid_PCR_Hybridization",1
+"587","Providencia rettgeri","K152614, K173263, K191288","species","g-proteobacteria","Providencia rettgeri","","Providencia","rettgeri",NA,"species","587","Hybrid_PCR_Hybridization",3
+"588","Providencia stuartii","K181663, K191288, K193519","species","g-proteobacteria","Providencia stuartii","","Providencia","stuartii",NA,"species","588","Hybrid_PCR_Hybridization",3
+"590","Salmonella","K121894, K123274, K140377, K140407, K213236, K243813","genus","enterobacteria","Salmonella","","Salmonella",NA,NA,"genus","590","Hybrid_PCR_Hybridization / PCR",6
+"59202","Salmonella enterica subsp. salamae","K213236","subspecies","enterobacteria","Salmonella enterica subsp. salamae","","Salmonella","enterica","subsp. salamae","subspecies","59202","Hybrid_PCR_Hybridization",1
+"59203","Salmonella choleraesuis subsp. Arizonae","K213236","subspecies","enterobacteria","Salmonella enterica subsp. arizonae","","Salmonella","enterica","subsp. arizonae","subspecies","59203","Hybrid_PCR_Hybridization",1
+"59204","Salmonella enterica subsp. diarizonae","K213236","subspecies","enterobacteria","Salmonella enterica subsp. diarizonae","","Salmonella","enterica","subsp. diarizonae","subspecies","59204","Hybrid_PCR_Hybridization",1
+"59205","Salmonella enterica subsp. houtenae","K213236","subspecies","enterobacteria","Salmonella enterica subsp. houtenae","","Salmonella","enterica","subsp. houtenae","subspecies","59205","Hybrid_PCR_Hybridization",1
+"59207","Salmonella enterica subsp. indica","K213236","subspecies","enterobacteria","Salmonella enterica subsp. indica","","Salmonella","enterica","subsp. indica","subspecies","59207","Hybrid_PCR_Hybridization",1
+"59310","Streptococcus macedonicus","K213236","species","firmicutes","Streptococcus macedonicus","","Streptococcus","macedonicus",NA,"species","59310","Hybrid_PCR_Hybridization",1
+"596","Salmonella enterica serovar Muenchen","K213236","","enterobacteria","Salmonella enterica subsp. enterica serovar Muenchen","","Salmonella","enterica","subsp. enterica serovar Muenchen","subspecies","59201","Hybrid_PCR_Hybridization",1
+"61015","Staphylococcus succinus","K152470, K213236","species","firmicutes","Staphylococcus succinus","","Staphylococcus","succinus",NA,"species","61015","Hybrid_PCR_Hybridization",2
+"614","Serratia liquefaciens","K193519, K213236","species","g-proteobacteria","Serratia liquefaciens","","Serratia","liquefaciens",NA,"species","614","Hybrid_PCR_Hybridization",2
+"615","Serratia marcescens","K143171, K152614, K173263, K180966, K181324, K181663, K190222, K190341, K191288, K191967, K193519, K200010, K213236","species","g-proteobacteria","Serratia marcescens","","Serratia","marcescens",NA,"species","615","Hybrid_PCR_Hybridization / PCR",13
+"61645","Enterobacter asburiae","K193519, K213236","species","enterobacteria","Enterobacter asburiae","","Enterobacter","asburiae",NA,"species","61645","Hybrid_PCR_Hybridization",2
+"61646","Enterobacter amnigenus","K213236, K193519","species","enterobacteria","Lelliottia amnigena","","Lelliottia","amnigena",NA,"species","61646","Hybrid_PCR_Hybridization",2
+"61647","Enterobacter gergoviae","K213236, K193519","species","enterobacteria","Pluralibacter gergoviae","","Pluralibacter","gergoviae",NA,"species","61647","Hybrid_PCR_Hybridization",2
+"61648","Kluyvera intermedia","K193519","species","enterobacteria","Kluyvera intermedia","","Kluyvera","intermedia",NA,"species","61648","Hybrid_PCR_Hybridization",1
+"61651","Serratia ficaria","K193519, K213236","species","g-proteobacteria","Serratia ficaria","","Serratia","ficaria",NA,"species","61651","Hybrid_PCR_Hybridization",2
+"61652","Serratia rubidaea","K193519, K213236","species","g-proteobacteria","Serratia rubidaea","","Serratia","rubidaea",NA,"species","61652","Hybrid_PCR_Hybridization",2
+"618","Serratia odorifera","K193519","species","g-proteobacteria","Serratia odorifera","","Serratia","odorifera",NA,"species","618","Hybrid_PCR_Hybridization",1
+"620","Shigella","K123274, K140407, K243813","genus","enterobacteria","Shigella","","Shigella",NA,NA,"genus","620","Hybrid_PCR_Hybridization / PCR",3
+"621","Shigella boydii","K121894, K140083, K140377, K180041, K193519, K220062","species","enterobacteria","Shigella boydii","","Shigella","boydii",NA,"species","621","Hybrid_PCR_Hybridization",6
+"622","Shigella dysenteriae","K121894, K140083, K140377, K152955, K173330, K180041, K193519, K220062","species","enterobacteria","Shigella dysenteriae","","Shigella","dysenteriae",NA,"species","622","Hybrid_PCR_Hybridization",8
+"623","Shigella flexneri","K121894, K140083, K140377, K180041, K193519, K220062","species","enterobacteria","Shigella flexneri","","Shigella","flexneri",NA,"species","623","Hybrid_PCR_Hybridization",6
+"624","Shigella sonnei","K121894, K140083, K140377, K180041, K193519, K220062","species","enterobacteria","Shigella sonnei","","Shigella","sonnei",NA,"species","624","Hybrid_PCR_Hybridization",6
+"626774","Proteus cibarius","K213236","subspecies","g-proteobacteria","Proteus terrae subsp. cibarius","","Proteus","terrae","subsp. cibarius","subspecies","626774","Hybrid_PCR_Hybridization",1
+"630","Yersinia enterocolitica","K140083, K140407, K170308, K180041, K193519, K220062","species","g-proteobacteria","Yersinia enterocolitica","","Yersinia","enterocolitica",NA,"species","630","Hybrid_PCR_Hybridization / PCR",6
+"632","Yersinia pestis","K163522, K193519, K231336","species","g-proteobacteria","Yersinia pestis","","Yersinia","pestis",NA,"species","632","Hybrid_PCR_Hybridization",3
+"633","Yersinia pseudotuberculosis","K193519","species","g-proteobacteria","Yersinia pseudotuberculosis","","Yersinia","pseudotuberculosis",NA,"species","633","Hybrid_PCR_Hybridization",1
+"636","Edwardsiella tarda","K193519","species","g-proteobacteria","Edwardsiella tarda","","Edwardsiella","tarda",NA,"species","636","Hybrid_PCR_Hybridization",1
+"643214","Staphylococcus stepanovicii","K213236","species","firmicutes","Mammaliicoccus stepanovicii","","Mammaliicoccus","stepanovicii",NA,"species","643214","Hybrid_PCR_Hybridization",1
+"648","Aeromonas caviae","K181663","species","g-proteobacteria","Aeromonas caviae","","Aeromonas","caviae",NA,"species","648","Hybrid_PCR_Hybridization",1
+"653685","Bacillus subtilis group","K181663, K213236","species group","firmicutes","Bacillus subtilis group","","Bacillus","subtilis","group","species group","653685","Hybrid_PCR_Hybridization",2
+"658666","Bacillus bombysepticus","K213236","species","firmicutes","Bacillus bombysepticus","","Bacillus","bombysepticus",NA,"species","658666","Hybrid_PCR_Hybridization",1
+"661498","Streptococcus fryi","K213236","species","firmicutes","Streptococcus fryi","","Streptococcus","fryi",NA,"species","661498","Hybrid_PCR_Hybridization",1
+"665913","Mixta calida","K193519","species","g-proteobacteria","Mixta calida","","Mixta","calida",NA,"species","665913","Hybrid_PCR_Hybridization",1
+"665914","Mixta gaviniae","K193519","species","g-proteobacteria","Mixta gaviniae","","Mixta","gaviniae",NA,"species","665914","Hybrid_PCR_Hybridization",1
+"666","Vibrio cholerae","K140083, K140377, K140407, K170308, K180041, K182703","species","g-proteobacteria","Vibrio cholerae","","Vibrio","cholerae",NA,"species","666","Hybrid_PCR_Hybridization / PCR",6
+"66695","Citrobacter intermedius","K213236","species","enterobacteria","Citrobacter intermedius","","Citrobacter","intermedius",NA,"species","66695","Hybrid_PCR_Hybridization",1
+"670","Vibrio parahaemolyticus","K140083, K140407, K170308, K180041, K182703","species","g-proteobacteria","Vibrio parahaemolyticus","","Vibrio","parahaemolyticus",NA,"species","670","Hybrid_PCR_Hybridization / PCR",5
+"671232","Streptococcus anginosus group","K181663","species group","firmicutes","Streptococcus anginosus group","","Streptococcus","anginosus","group","species group","671232","Hybrid_PCR_Hybridization",1
+"672","Vibrio vulnificus","K140407, K170308, K180041","species","g-proteobacteria","Vibrio vulnificus","","Vibrio","vulnificus",NA,"species","672","Hybrid_PCR_Hybridization / PCR",3
+"67827","Citrobacter werkmanii","K191288, K213236","species","enterobacteria","Citrobacter werkmanii","","Citrobacter","werkmanii",NA,"species","67827","Hybrid_PCR_Hybridization",2
+"684066","Streptococcus lactarius","K213236","species","firmicutes","Streptococcus lactarius","","Streptococcus","lactarius",NA,"species","684066","Hybrid_PCR_Hybridization",1
+"68891","Streptococcus peroris","K213236","species","firmicutes","Streptococcus peroris","","Streptococcus","peroris",NA,"species","68891","Hybrid_PCR_Hybridization",1
+"68892","Streptococcus infantis","K181663, K213236","species","firmicutes","Streptococcus infantis","","Streptococcus","infantis",NA,"species","68892","Hybrid_PCR_Hybridization",2
+"69218","Enterobacter cancerogenus","K193519","species","enterobacteria","Enterobacter cancerogenus","","Enterobacter","cancerogenus",NA,"species","69218","Hybrid_PCR_Hybridization",1
+"69220","Enterobacter nimipressuralis","K213236, K193519","species","enterobacteria","Lelliottia nimipressuralis","","Lelliottia","nimipressuralis",NA,"species","69220","Hybrid_PCR_Hybridization",2
+"694448","Human Coronavirus","K233410","species","viruses","unidentified human coronavirus","","unidentified","human","coronavirus","species","694448","Hybrid_PCR_Hybridization",1
+"70255","Staphylococcus condimenti","K152470, K213236","species","firmicutes","Staphylococcus condimenti","","Staphylococcus","condimenti",NA,"species","70255","Hybrid_PCR_Hybridization",2
+"70258","Staphylococcus piscifermentans","K152470, K213236","species","firmicutes","Staphylococcus piscifermentans","","Staphylococcus","piscifermentans",NA,"species","70258","Hybrid_PCR_Hybridization",2
+"703","Plesiomonas shigelloides","K140407, K170308, K193519, K220062","species","enterobacteria","Plesiomonas shigelloides","","Plesiomonas","shigelloides",NA,"species","703","Hybrid_PCR_Hybridization / PCR",4
+"71237","Staphylococcus pulvereri","K152470, K213236","species","firmicutes","Mammaliicoccus vitulinus","","Mammaliicoccus","vitulinus",NA,"species","71237","Hybrid_PCR_Hybridization",2
+"71451","Enterococcus malodoratus","K181663, K213236","species","firmicutes","Enterococcus malodoratus","","Enterococcus","malodoratus",NA,"species","71451","Hybrid_PCR_Hybridization",2
+"71452","Enterococcus raffinosus","K181663, K213236","species","firmicutes","Enterococcus raffinosus","","Enterococcus","raffinosus",NA,"species","71452","Hybrid_PCR_Hybridization",2
+"72360","Bacillus mojavensis","K213236","species","firmicutes","Bacillus mojavensis","","Bacillus","mojavensis",NA,"species","72360","Hybrid_PCR_Hybridization",1
+"72361","Bacillus vallismortis","K213236","species","firmicutes","Bacillus vallismortis","","Bacillus","vallismortis",NA,"species","72361","Hybrid_PCR_Hybridization",1
+"727","Haemophilus influenzae","K143171, K180966, K181324, K190222, K191967, K193519, K200010, K213236, K242256","species","g-proteobacteria","Haemophilus influenzae","","Haemophilus","influenzae",NA,"species","727","Hybrid_PCR_Hybridization / PCR",9
+"747656","Streptococcus danieliae","K213236","species","firmicutes","Streptococcus danieliae","","Streptococcus","danieliae",NA,"species","747656","Hybrid_PCR_Hybridization",1
+"756076","Cryptosporidium tyzzeri","K220062","species","apicomplexans","Cryptosporidium tyzzeri","","Cryptosporidium","tyzzeri",NA,"species","756076","Hybrid_PCR_Hybridization",1
+"759619","Streptococcus rupicaprae","K213236","species","firmicutes","Streptococcus rupicaprae","","Streptococcus","rupicaprae",NA,"species","759619","Hybrid_PCR_Hybridization",1
+"76856","Fusobacterium nucleatum subsp. nucleatum","K213236","subspecies","fusobacteria","Fusobacterium nucleatum subsp. nucleatum","","Fusobacterium","nucleatum","subsp. nucleatum","subspecies","76856","Hybrid_PCR_Hybridization",1
+"76860","Streptococcus constellatus","K181663, K193519, K213236","species","firmicutes","Streptococcus constellatus","","Streptococcus","constellatus",NA,"species","76860","Hybrid_PCR_Hybridization",3
+"777","Coxiella burnetii","K103207, K163522","species","g-proteobacteria","Coxiella burnetii","","Coxiella","burnetii",NA,"species","777","Hybrid_PCR_Hybridization",2
+"782","Rickettsia prowazekii","K231336","species","a-proteobacteria","Rickettsia prowazekii","","Rickettsia","prowazekii",NA,"species","782","Hybrid_PCR_Hybridization",1
+"813","Chlamydia trachomatis","K190223, K111409, K132251, K200866, K151589, K140446, K191352, K200533, K110923, K173887, K132270, K202408, K121710, K190441, K190515, K231329, K230267, K240217, K240197, K210585, K220407, K202977, K193081, K200748, K243410","species","chlamydias","Chlamydia trachomatis","","Chlamydia","trachomatis",NA,"species","813","Hybrid_PCR_Hybridization / PCR",25
+"817","Bacteroides fragilis","K181663, K193519, K200010, K213236","species","CFB group bacteria","Bacteroides fragilis","","Bacteroides","fragilis",NA,"species","817","Hybrid_PCR_Hybridization",4
+"82135","Atopobium vaginae","K190452, K201017, K212213, K223653, K243725","species","actinobacteria","Fannyhessea vaginae","","Fannyhessea","vaginae",NA,"species","82135","Hybrid_PCR_Hybridization",5
+"82348","Streptococcus pluranimalium","K213236","species","firmicutes","Streptococcus pluranimalium","","Streptococcus","pluranimalium",NA,"species","82348","Hybrid_PCR_Hybridization",1
+"824","Campylobacter gracilis","K181663","species","e-proteobacteria","Campylobacter gracilis","","Campylobacter","gracilis",NA,"species","824","Hybrid_PCR_Hybridization",1
+"82806","Streptococcus ovis","K213236","species","firmicutes","Streptococcus ovis","","Streptococcus","ovis",NA,"species","82806","Hybrid_PCR_Hybridization",1
+"82987","Tatumella ptyseos","K193519","species","g-proteobacteria","Tatumella ptyseos","","Tatumella","ptyseos",NA,"species","82987","Hybrid_PCR_Hybridization",1
+"82995","Serratia grimesii","K213236","species","g-proteobacteria","Serratia grimesii","","Serratia","grimesii",NA,"species","82995","Hybrid_PCR_Hybridization",1
+"82996","Serratia plymuthica","K193519, K213236","species","g-proteobacteria","Serratia plymuthica","","Serratia","plymuthica",NA,"species","82996","Hybrid_PCR_Hybridization",2
+"83540","Cryptosporidium felis","K220062","species","apicomplexans","Cryptosporidium felis","","Cryptosporidium","felis",NA,"species","83540","Hybrid_PCR_Hybridization",1
+"83558","Chlamydia pneumoniae","K180966, K181324, K190222, K191967, K202196, K213954, K183597, K233100","species","chlamydias","Chlamydia pneumoniae","","Chlamydia","pneumoniae",NA,"species","83558","Hybrid_PCR_Hybridization / PCR",8
+"83655","Leclercia adecarboxylata","K193519","species","enterobacteria","Leclercia adecarboxylata","","Leclercia","adecarboxylata",NA,"species","83655","Hybrid_PCR_Hybridization",1
+"851","Fusobacterium nucleatum","K213236","species","fusobacteria","Fusobacterium nucleatum","","Fusobacterium","nucleatum",NA,"species","851","Hybrid_PCR_Hybridization",1
+"857276","Cryptosporidium ubiquitum","K220062","species","apicomplexans","Cryptosporidium ubiquitum","","Cryptosporidium","ubiquitum",NA,"species","857276","Hybrid_PCR_Hybridization",1
+"859","Fusobacterium necrophorum","K213236","species","fusobacteria","Fusobacterium necrophorum","","Fusobacterium","necrophorum",NA,"species","859","Hybrid_PCR_Hybridization",1
+"86661","Bacillus cereus group","K181663, K213236","species group","firmicutes","Bacillus cereus group","","Bacillus","cereus","group","species group","86661","Hybrid_PCR_Hybridization",2
+"881260","Enterobacter bugandensis","K193519","species","enterobacteria","Enterobacter bugandensis","","Enterobacter","bugandensis",NA,"species","881260","Hybrid_PCR_Hybridization",1
+"88456","Cyclospora cayetanensis","K140407, K220062","species","apicomplexans","Cyclospora cayetanensis","","Cyclospora","cayetanensis",NA,"species","88456","Hybrid_PCR_Hybridization / PCR",2
+"885040","Enterobacter soli","K193519","species","enterobacteria","Enterobacter soli","","Enterobacter","soli",NA,"species","885040","Hybrid_PCR_Hybridization",1
+"90105","Salmonella enterica serovar Saintpaul","K213236","","enterobacteria","Salmonella enterica subsp. enterica serovar Saintpaul","","Salmonella","enterica","subsp. enterica serovar Saintpaul","subspecies","59201","Hybrid_PCR_Hybridization",1
+"90370","Salmonella enterica serovar Typhi","K213236","","enterobacteria","Salmonella enterica subsp. enterica serovar Typhi","","Salmonella","enterica","subsp. enterica serovar Typhi","subspecies","59201","Hybrid_PCR_Hybridization",1
+"90371","Salmonella enterica serovar Typhimurium","K213236, K193519","","enterobacteria","Salmonella enterica subsp. enterica serovar Typhimurium","","Salmonella","enterica","subsp. enterica serovar Typhimurium","subspecies","59201","Hybrid_PCR_Hybridization",2
+"91061","Non-fermenting gram-negative bacilli","K181663","class","firmicutes","Bacilli","","Bacilli",NA,NA,"class","91061","Hybrid_PCR_Hybridization",1
+"910939","Streptococcus hongkongensis","K213236","species","firmicutes","Streptococcus hongkongensis","","Streptococcus","hongkongensis",NA,"species","910939","Hybrid_PCR_Hybridization",1
+"91347","Enterobacterales","K193519","order","g-proteobacteria","Enterobacterales","","Enterobacterales",NA,NA,"order","91347","Hybrid_PCR_Hybridization",1
+"93969","Cryptosporidium meleagridis","K220062","species","apicomplexans","Cryptosporidium meleagridis","","Cryptosporidium","meleagridis",NA,"species","93969","Hybrid_PCR_Hybridization",1
+"985002","Staphylococcus argenteus","K193519, K213236","species","firmicutes","Staphylococcus argenteus","","Staphylococcus","argenteus",NA,"species","985002","Hybrid_PCR_Hybridization",2
+"985762","Staphylococcus agnetis","K213236","species","firmicutes","Staphylococcus agnetis","","Staphylococcus","agnetis",NA,"species","985762","Hybrid_PCR_Hybridization",1
+"99822","Streptococcus dysgalactiae subsp. dysgalactiae","K213236","subspecies","firmicutes","Streptococcus dysgalactiae subsp. dysgalactiae","","Streptococcus","dysgalactiae","subsp. dysgalactiae","subspecies","99822","Hybrid_PCR_Hybridization",1
