@@ -1,7 +1,12 @@
 ################################################################################
-# SCRIPT:  FDA510kpathogens.R
-# PURPOSE: Build a comprehensive resource mapping FDA-cleared/approved
-#          Nucleic Acid Amplification Tests (NAATs) to NCBI taxonomy IDs.
+# SCRIPT:       FDA510kpathogens.R
+# VERSION:      1.1.0 (Git Tag: v1.1.0)
+# LAST UPDATED: 2026-11-07
+# AUTHOR:       Manuel Duval (double-strand llc)
+# REPOSITORY:   https://github.com/double-strand/IVDmicrobialNAATregistry
+# LICENSE:      GPL-3.0
+# PURPOSE:      Build a comprehensive resource mapping FDA-cleared/approved
+#               Nucleic Acid Amplification Tests (NAATs) to NCBI taxonomy IDs.
 #
 # Workflow:
 #   Step 1  — Ingest FDA IVD microbial table → microbial_df
@@ -60,7 +65,8 @@ FORCE_REFRESH <- list(
 # ── 0.2 resource  ────────────────────────────────────────────────────────────
 FDA_IVD_URL  <- "https://www.fda.gov/medical-devices/in-vitro-diagnostics/nucleic-acid-based-tests#microbial"
 USER_AGENT   <- "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
-GEMINI_MODEL <- "gemini-2.5-flash"
+GEMINI_MODEL     <- "gemini-2.5-flash"
+PIPELINE_VERSION <- "v1.1.0"
 
 # validating technology categories returned by the classifier
 VALID_TECH <- c(
@@ -322,6 +328,16 @@ if (length(pdf_na) > 0) {
   )
   submission_tech_df <- dplyr::bind_rows(submission_tech_df, na_rows)
 }
+
+submission_tech_df <- submission_tech_df |>
+  mutate(
+    Regulatory_Pathway = dplyr::case_when(
+      stringr::str_starts(Submission, "DEN") ~ "De Novo Classification",
+      stringr::str_starts(Submission, "K")   ~ "510(k) Premarket Notification",
+      stringr::str_starts(Submission, "P")   ~ "Premarket Approval (PMA)",
+      TRUE                                   ~ NA_character_
+    )
+  )
 
 message(sprintf("Step 3c complete: technology classified for %d submissions", nrow(submission_tech_df)))
 message("Technology distribution:")
@@ -1013,8 +1029,58 @@ FDA510kPathogens_NAAT <- FDA510kPathogens_NAAT |>
     )
   )
 
+# attaching regulatory pathway classification to final output
+# mapping each Submission ID prefix to its corresponding FDA regulatory pathway:
+#   - Prefix 'K'   -> "510(k) Premarket Notification"
+#   - Prefix 'DEN' -> "De Novo Classification"
+#   - Prefix 'P'   -> "Premarket Approval (PMA)"
+classify_submission_pathway <- function(sub_id) {
+  dplyr::case_when(
+    stringr::str_starts(sub_id, "DEN") ~ "De Novo Classification",
+    stringr::str_starts(sub_id, "K")   ~ "510(k) Premarket Notification",
+    stringr::str_starts(sub_id, "P")   ~ "Premarket Approval (PMA)",
+    TRUE                               ~ NA_character_
+  )
+}
+
+resolve_regulatory_pathway <- function(submissions_str) {
+  ids <- stringr::str_split(submissions_str, ",\\s*")[[1]] |> stringr::str_squish()
+  pathways <- classify_submission_pathway(ids) |>
+     stats::na.omit() |>
+    unique()
+  if (length(pathways) == 0) return(NA_character_)
+  if (length(pathways) == 1) return(pathways)
+  paste(sort(pathways), collapse = " / ")
+}
+
+FDA510kPathogens_NAAT <- FDA510kPathogens_NAAT |>
+  mutate(
+    Regulatory_Pathway = vapply(
+      Submissions,
+      resolve_regulatory_pathway,
+      character(1)
+    )
+  )
+
 # getting the total number of submissions per pathogen
 FDA510kPathogens_NAAT$Submission_Count <- sapply(1:dim(FDA510kPathogens_NAAT)[1], \(i) stringr::str_count(FDA510kPathogens_NAAT$Submissions[i], ",") + 1) 
+
+# attaching pipeline version and execution provenance metadata to R objects
+attr(FDA510kPathogens_NAAT, "pipeline_version") <- PIPELINE_VERSION
+attr(FDA510kPathogens_NAAT, "llm_model")        <- GEMINI_MODEL
+attr(FDA510kPathogens_NAAT, "run_date")         <- as.character(Sys.Date())
+
+attr(excluded_submissions, "pipeline_version")  <- PIPELINE_VERSION
+attr(excluded_submissions, "llm_model")         <- GEMINI_MODEL
+attr(excluded_submissions, "run_date")          <- as.character(Sys.Date())
+
+message(sprintf(
+  "Pipeline %s complete (%s): %d unique taxa (%d total submission mappings) saved.",
+  PIPELINE_VERSION,
+  as.character(Sys.Date()),
+  nrow(FDA510kPathogens_NAAT),
+  sum(FDA510kPathogens_NAAT$Submission_Count, na.rm = TRUE)
+))
 
 # saving outputs 
 saveRDS(FDA510kPathogens_NAAT, "FDA510kPathogens_NAAT.rds")
@@ -1024,5 +1090,5 @@ write.csv(FDA510kPathogens_NAAT, "FDA510kPathogens_NAAT.csv", row.names = FALSE)
 #saveRDS(excluded_submissions, "FDA510k_excluded_hybridization.rds")
 write.csv(excluded_submissions, "FDA510k_excluded_hybridization.csv", row.names = FALSE)
 
-message("Done. Outputs: FDA510kPathogens_NAAT.rds / .csv")
+
 ###############################################################################
