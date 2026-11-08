@@ -1,6 +1,6 @@
 ################################################################################
 # SCRIPT:       FDA510kpathogens.R
-# VERSION:      1.1.0 (Git Tag: v1.1.0)
+# VERSION:      1.2.0 (Git Tag: v1.2.0)
 # LAST UPDATED: 2026-11-07
 # AUTHOR:       Manuel Duval (double-strand llc)
 # REPOSITORY:   https://github.com/double-strand/IVDmicrobialNAATregistry
@@ -66,7 +66,7 @@ FORCE_REFRESH <- list(
 FDA_IVD_URL  <- "https://www.fda.gov/medical-devices/in-vitro-diagnostics/nucleic-acid-based-tests#microbial"
 USER_AGENT   <- "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
 GEMINI_MODEL     <- "gemini-2.5-flash"
-PIPELINE_VERSION <- "v1.1.0"
+PIPELINE_VERSION <- "v1.2.0"
 
 # validating technology categories returned by the classifier
 VALID_TECH <- c(
@@ -132,25 +132,111 @@ with_cache <- function(key, force_refresh = FALSE, expr) {
   result
 }
 
-# get_fda_summary_text 
+# get_fda_summary_text: supports 510(k) (K), De Novo (DEN), and PMA (P)
 get_fda_summary_text <- function(submission_id) {
+  candidate_urls <- character(0)
+  
   if (str_starts(submission_id, "K")) {
     yr_prefix <- substr(submission_id, 2, 3)
-    url <- paste0(
-      "https://www.accessdata.fda.gov/cdrh_docs/pdf",
-      yr_prefix, "/", submission_id, ".pdf"
+    yr_num    <- suppressWarnings(as.integer(yr_prefix))
+    # Pre-2002 510(k)s sometimes reside in /cdrh_docs/pdf/ without a year suffix
+    if (!is.na(yr_num) && yr_num >= 2 && yr_num <= 50) {
+      candidate_urls <- c(
+        paste0("https://www.accessdata.fda.gov/cdrh_docs/pdf", yr_prefix, "/", submission_id, ".pdf"),
+        paste0("https://www.accessdata.fda.gov/cdrh_docs/pdf/", submission_id, ".pdf")
+      )
+    } else {
+      candidate_urls <- c(
+        paste0("https://www.accessdata.fda.gov/cdrh_docs/pdf/", submission_id, ".pdf"),
+        paste0("https://www.accessdata.fda.gov/cdrh_docs/pdf", yr_prefix, "/", submission_id, ".pdf")
+      )
+    }
+  } else if (str_starts(submission_id, "DEN")) {
+    yr_prefix <- substr(submission_id, 4, 5)
+    # De Novo decision summaries reside in /cdrh_docs/reviews/DENxxxxxx.pdf or /cdrh_docs/pdf<YY>/DENxxxxxx.pdf
+    candidate_urls <- c(
+      paste0("https://www.accessdata.fda.gov/cdrh_docs/reviews/", submission_id, ".pdf"),
+      paste0("https://www.accessdata.fda.gov/cdrh_docs/pdf", yr_prefix, "/", submission_id, ".pdf"),
+      paste0("https://www.accessdata.fda.gov/cdrh_docs/pdf/", submission_id, ".pdf")
     )
+  } else if (str_starts(submission_id, "P")) {
+    yr_prefix <- substr(submission_id, 2, 3)
+    yr_num    <- suppressWarnings(as.integer(yr_prefix))
+    # PMA Summary of Safety and Effectiveness Data (SSED) files carry a 'B.pdf' suffix
+    if (!is.na(yr_num) && yr_num >= 2 && yr_num <= 50) {
+      candidate_urls <- c(
+        paste0("https://www.accessdata.fda.gov/cdrh_docs/pdf", yr_prefix, "/", submission_id, "B.pdf"),
+        paste0("https://www.accessdata.fda.gov/cdrh_docs/pdf/", submission_id, "B.pdf"),
+        paste0("https://www.accessdata.fda.gov/cdrh_docs/pdf", yr_prefix, "/", submission_id, ".pdf"),
+        paste0("https://www.accessdata.fda.gov/cdrh_docs/pdf/", submission_id, ".pdf")
+      )
+    } else {
+      candidate_urls <- c(
+        paste0("https://www.accessdata.fda.gov/cdrh_docs/pdf/", submission_id, "B.pdf"),
+        paste0("https://www.accessdata.fda.gov/cdrh_docs/pdf", yr_prefix, "/", submission_id, "B.pdf"),
+        paste0("https://www.accessdata.fda.gov/cdrh_docs/pdf/", submission_id, ".pdf")
+      )
+    }
   } else {
-    return(NA_character_)   # DEN / PMA submissions: not handled yet
+    return(NA_character_)
   }
-  tryCatch({
-    raw_text   <- pdftools::pdf_text(url)
-    clean_text <- paste(raw_text, collapse = " ") |> str_squish()
-    clean_text
-  }, error = function(e) {
-    message(sprintf("Could not fetch PDF for: %s", submission_id))
-    NA_character_
-  })
+  
+  for (u in unique(candidate_urls)) {
+    txt <- tryCatch({
+      raw_text   <- pdftools::pdf_text(u)
+      clean_text <- paste(raw_text, collapse = " ") |> str_squish()
+      if (nzchar(clean_text)) clean_text else NA_character_
+    }, error = function(e) {
+      NA_character_
+    })
+    if (!is.na(txt) && nzchar(txt)) {
+      return(txt)
+    }
+  }
+  
+  # Fallback for PMA / De Novo if direct PDF URL fails: query openFDA PMA API or FDA De Novo database page
+  if (str_starts(submission_id, "P")) {
+    pma_txt <- tryCatch({
+      api_url <- paste0("https://api.fda.gov/device/pma.json?search=pma_number:", submission_id, "&limit=1")
+      resp <- httr::GET(api_url, httr::add_headers(`User-Agent` = USER_AGENT))
+      if (httr::status_code(resp) == 200) {
+        js <- jsonlite::fromJSON(httr::content(resp, as = "text", encoding = "UTF-8"))
+        stmt <- paste(
+          js$results$trade_name,
+          js$results$generic_name,
+          js$results$ao_statement,
+          collapse = " "
+        ) |> str_squish()
+        if (nzchar(stmt)) return(stmt)
+      }
+      NA_character_
+    }, error = function(e) NA_character_)
+    if (!is.na(pma_txt) && nzchar(pma_txt)) return(pma_txt)
+  } else if (str_starts(submission_id, "DEN")) {
+    den_txt <- tryCatch({
+      den_page <- paste0("https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/denovo.cfm?id=", submission_id)
+      resp <- httr::GET(den_page, httr::add_headers(`User-Agent` = USER_AGENT))
+      if (httr::status_code(resp) == 200) {
+        page_html <- rvest::read_html(httr::content(resp, as = "text", encoding = "UTF-8"))
+        hrefs <- page_html |> rvest::html_nodes("a") |> rvest::html_attr("href") |> stats::na.omit()
+        pdf_links <- hrefs[str_detect(hrefs, "(?i)\\.pdf$")]
+        for (plink in pdf_links) {
+          full_url <- ifelse(str_starts(plink, "http"), plink, paste0("https://www.accessdata.fda.gov", plink))
+          ptxt <- tryCatch({
+            paste(pdftools::pdf_text(full_url), collapse = " ") |> str_squish()
+          }, error = function(e) NA_character_)
+          if (!is.na(ptxt) && nzchar(ptxt)) return(ptxt)
+        }
+        body_txt <- page_html |> rvest::html_text2() |> str_squish()
+        if (nzchar(body_txt)) return(body_txt)
+      }
+      NA_character_
+    }, error = function(e) NA_character_)
+    if (!is.na(den_txt) && nzchar(den_txt)) return(den_txt)
+  }
+  
+  message(sprintf("Could not fetch summary text/PDF for: %s", submission_id))
+  NA_character_
 }
 
 ################################################################################
@@ -221,11 +307,38 @@ all_pdf_texts <- with_cache("03_fda_pdfs_all", FORCE_REFRESH$fda_pdfs_all, funct
 
 # partitioning into fetchable vs. failed
 pdf_na    <- names(which(is.na(all_pdf_texts)))
+
+# Explicitly route DEN (De Novo) and P (PMA) submissions in pdf_na to attempt
+# secondary recovery (and ensure cached runs from earlier K-only runs retry DEN/PMA)
+den_pma_in_na <- pdf_na[str_starts(pdf_na, "DEN") | str_starts(pdf_na, "P")]
+if (length(den_pma_in_na) > 0) {
+  message(sprintf(
+    "Step 3b recovery: routing %d De Novo (DEN) / PMA (P) submissions from pdf_na...",
+    length(den_pma_in_na)
+  ))
+  recovered_texts <- lapply(den_pma_in_na, get_fda_summary_text)
+  names(recovered_texts) <- den_pma_in_na
+  for (sid in den_pma_in_na) {
+    if (!is.na(recovered_texts[[sid]]) && nzchar(recovered_texts[[sid]])) {
+      all_pdf_texts[[sid]] <- recovered_texts[[sid]]
+    }
+  }
+  disk_cache$set("03_fda_pdfs_all", all_pdf_texts)
+  pdf_na <- names(which(is.na(all_pdf_texts)))
+}
+
 pdf_valid <- all_pdf_texts[!names(all_pdf_texts) %in% pdf_na]
 
+# Partition remaining pdf_na by regulatory pathway (PMA vs De Novo vs 510(k) vs Other)
+pdf_na_pma    <- pdf_na[str_starts(pdf_na, "P")]
+pdf_na_denovo <- pdf_na[str_starts(pdf_na, "DEN")]
+pdf_na_510k   <- pdf_na[str_starts(pdf_na, "K")]
+pdf_na_other  <- setdiff(pdf_na, c(pdf_na_pma, pdf_na_denovo, pdf_na_510k))
+
 message(sprintf(
-  "Step 3b: %d PDFs fetched successfully, %d failed (NA)",
-  length(pdf_valid), length(pdf_na)
+  "Step 3b: %d summaries fetched | %d failed (NA) [PMA: %d, De Novo: %d, 510(k): %d, Other: %d]",
+  length(pdf_valid), length(pdf_na),
+  length(pdf_na_pma), length(pdf_na_denovo), length(pdf_na_510k), length(pdf_na_other)
 ))
 
 # ── 3c. LLM Technology Classifier ────────────────────────────────────────────
@@ -317,16 +430,70 @@ submission_tech_df <- with_cache("03_tech_classify", FORCE_REFRESH$tech_classify
   dplyr::bind_rows(results)
 })
 
+# Classify any newly recovered DEN / PMA texts that were NA in an older cache
+unclassified_valid <- setdiff(
+  names(pdf_valid),
+  submission_tech_df$Submission[!is.na(submission_tech_df$Technology)]
+)
+if (length(unclassified_valid) > 0) {
+  message(sprintf(
+    "Step 3c: classifying %d newly recovered PMA / De Novo summaries...",
+    length(unclassified_valid)
+  ))
+  new_tech_rows <- dplyr::bind_rows(Map(
+    get_technology,
+    doc_id    = unclassified_valid,
+    text_data = pdf_valid[unclassified_valid]
+  ))
+  submission_tech_df <- submission_tech_df |>
+    filter(!Submission %in% unclassified_valid) |>
+    bind_rows(new_tech_rows)
+  disk_cache$set("03_tech_classify", submission_tech_df)
+}
+
 # appending NA rows for submissions whose PDF could not be fetched
-if (length(pdf_na) > 0) {
+missing_from_tech <- setdiff(pdf_na, submission_tech_df$Submission)
+if (length(missing_from_tech) > 0) {
   na_rows <- data.frame(
-    Submission    = pdf_na,
+    Submission    = missing_from_tech,
     Technology    = NA_character_,
     EvidenceQuote = NA_character_,
     Confidence    = NA_character_,
     stringsAsFactors = FALSE
   )
   submission_tech_df <- dplyr::bind_rows(submission_tech_df, na_rows)
+}
+
+# Route remaining PMA (P) and De Novo (DEN) submissions in pdf_na:
+# Infer technology from Trade.Name / Microorganism in microbial_df when PDF is unavailable
+pma_den_na_ids <- c(pdf_na_pma, pdf_na_denovo)
+if (length(pma_den_na_ids) > 0) {
+  pma_den_meta <- microbial_df |>
+    filter(Submission %in% pma_den_na_ids) |>
+    group_by(Submission) |>
+    summarise(
+      combined_meta = paste(Trade.Name, Microorganism, collapse = " "),
+      .groups = "drop"
+    ) |>
+    mutate(
+      inferred_tech = case_when(
+        str_detect(combined_meta, "(?i)hybrid capture|\\bhc2\\b|branched dna|\\bbdna\\b|probe system|affirm vpip") ~ "Hybridization",
+        str_detect(combined_meta, "(?i)\\bpcr\\b|polymerase chain reaction|cobas|taqman|real-time|abbott realtime|xpert|filmarray|bd max|alinity m|ampliscreen|roche") ~ "PCR",
+        str_detect(combined_meta, "(?i)\\btma\\b|aptima|procleix|transcription-mediated|\\blamp\\b|\\bnasba\\b|\\bsda\\b|strand displacement|bd probetec") ~ "Other_Amplification",
+        TRUE ~ "PCR"
+      )
+    )
+  
+  submission_tech_df <- submission_tech_df |>
+    left_join(pma_den_meta |> select(Submission, inferred_tech), by = "Submission") |>
+    mutate(
+      Technology    = ifelse(is.na(Technology) & !is.na(inferred_tech), inferred_tech, Technology),
+      EvidenceQuote = ifelse(is.na(EvidenceQuote) & !is.na(inferred_tech),
+                             "Inferred from FDA microbial table Trade Name (PDF unavailable)",
+                             EvidenceQuote),
+      Confidence    = ifelse(is.na(Confidence) & !is.na(inferred_tech), "low", Confidence)
+    ) |>
+    select(-inferred_tech)
 }
 
 submission_tech_df <- submission_tech_df |>
@@ -562,6 +729,73 @@ pathogen_set2 <- merge(subset_2_cleaned, pathogen_set2,
 pathogen_set1_2 <- bind_rows(pathogen_set1, pathogen_set2) |>
   filter(FDAregulatoryLabels != "Sepsis")
 
+# NER function — fresh Chat object per document (no history contamination)
+get_organisms_safely <- function(doc_id, text_data,
+                                 max_retries   = 3,
+                                 model         = GEMINI_MODEL,
+                                 system_prompt = NER_SYSTEM_PROMPT) {
+  empty_row <- data.frame(
+    Submission          = doc_id,
+    FDAregulatoryLabels = NA_character_,
+    stringsAsFactors    = FALSE
+  )
+  
+  if (is.na(text_data) || !nzchar(text_data)) return(empty_row)
+  
+  for (attempt in seq_len(max_retries)) {
+    parsed  <- NULL
+    give_up <- FALSE
+    
+    tryCatch({
+      # Fresh Chat object per call — stateless, no history
+      ner_chat <- chat_google_gemini(
+        model         = model,
+        system_prompt = system_prompt,
+        api_args      = list(
+          generationConfig = list(
+            temperature      = 0,
+            responseMimeType = "application/json"
+          )
+        )
+      )
+      raw    <- ner_chat$chat(text_data)
+      json   <- raw |>
+        str_replace("(?s)^\\s*```(?:json)?\\s*", "") |>
+        str_replace("```\\s*$", "") |>
+        str_trim()
+      parsed <- fromJSON(json)
+    }, error = function(e) {
+      if (grepl("429", conditionMessage(e))) {
+        message(sprintf("[NER %s] Rate-limit (attempt %d) — sleeping 45s", doc_id, attempt))
+        Sys.sleep(45)
+      } else {
+        message(sprintf("[NER %s] Fatal error: %s", doc_id, conditionMessage(e)))
+        give_up <<- TRUE
+      }
+    })
+    
+    if (give_up || !is.null(parsed)) break
+  }
+  
+  # if (is.null(parsed) || !is.character(parsed)) return(empty_row)
+  # if (length(parsed) == 0) return(empty_row)
+  # 
+  # data.frame(
+  #   Submission          = doc_id,
+  #   FDAregulatoryLabels = parsed,
+  #   stringsAsFactors    = FALSE
+  # Extract only the "targets" array from the JSON object
+  targets <- parsed[["targets"]]
+  
+  if (is.null(targets) || length(targets) == 0) return(empty_row)
+  
+  data.frame(
+    Submission          = doc_id,
+    FDAregulatoryLabels = targets,  # Only keep the targeted pathogens
+    stringsAsFactors    = FALSE
+  )
+}
+
 # ==============================================================================
 # Step 7b — Targeted NER for "Respiratory Viruses" submissions
 #
@@ -711,73 +945,6 @@ unmapped_texts <- lapply(unmapped_naat, get_text_for_submission)
 names(unmapped_texts) <- unmapped_naat
 unmapped_texts_valid  <- unmapped_texts[!is.na(unmapped_texts)]
 
-# NER function — fresh Chat object per document (no history contamination)
-get_organisms_safely <- function(doc_id, text_data,
-                                 max_retries   = 3,
-                                 model         = GEMINI_MODEL,
-                                 system_prompt = NER_SYSTEM_PROMPT) {
-  empty_row <- data.frame(
-    Submission          = doc_id,
-    FDAregulatoryLabels = NA_character_,
-    stringsAsFactors    = FALSE
-  )
-  
-  if (is.na(text_data) || !nzchar(text_data)) return(empty_row)
-  
-  for (attempt in seq_len(max_retries)) {
-    parsed  <- NULL
-    give_up <- FALSE
-    
-    tryCatch({
-      # Fresh Chat object per call — stateless, no history
-      ner_chat <- chat_google_gemini(
-        model         = model,
-        system_prompt = system_prompt,
-        api_args      = list(
-          generationConfig = list(
-            temperature      = 0,
-            responseMimeType = "application/json"
-          )
-        )
-      )
-      raw    <- ner_chat$chat(text_data)
-      json   <- raw |>
-        str_replace("(?s)^\\s*```(?:json)?\\s*", "") |>
-        str_replace("```\\s*$", "") |>
-        str_trim()
-      parsed <- fromJSON(json)
-    }, error = function(e) {
-      if (grepl("429", conditionMessage(e))) {
-        message(sprintf("[NER %s] Rate-limit (attempt %d) — sleeping 45s", doc_id, attempt))
-        Sys.sleep(45)
-      } else {
-        message(sprintf("[NER %s] Fatal error: %s", doc_id, conditionMessage(e)))
-        give_up <<- TRUE
-      }
-    })
-    
-    if (give_up || !is.null(parsed)) break
-  }
-  
-  # if (is.null(parsed) || !is.character(parsed)) return(empty_row)
-  # if (length(parsed) == 0) return(empty_row)
-  # 
-  # data.frame(
-  #   Submission          = doc_id,
-  #   FDAregulatoryLabels = parsed,
-  #   stringsAsFactors    = FALSE
-  # Extract only the "targets" array from the JSON object
-  targets <- parsed[["targets"]]
-  
-  if (is.null(targets) || length(targets) == 0) return(empty_row)
-  
-  data.frame(
-    Submission          = doc_id,
-    FDAregulatoryLabels = targets,  # Only keep the targeted pathogens
-    stringsAsFactors    = FALSE
-  )
-}
-
 subset_3_raw <- with_cache("07_llm_ner", FORCE_REFRESH$llm_ner, function() {
   results <- Map(
     get_organisms_safely,
@@ -835,6 +1002,92 @@ pathogen_set3 <- do.call(rbind, lapply(subset_3_new$FDAregulatoryLabels, functio
   )
 }))
 pathogen_set3 <- merge(subset_3_new, pathogen_set3, by = "FDAregulatoryLabels")
+
+# ==============================================================================
+# Step 8b — Fallback NCBI TaxID resolution for PMA (P) and De Novo (DEN)
+#           submissions from pdf_na that remain unmapped after PDF NER
+# ==============================================================================
+mapped_after_step8 <- bind_rows(pathogen_set1_2, pathogen_set3)$Submissions |>
+  str_split(",") |>
+  unlist() |>
+  str_squish() |>
+  unique()
+
+unmapped_pma_den <- setdiff(
+  naat_submissions[str_starts(naat_submissions, "P") | str_starts(naat_submissions, "DEN")],
+  mapped_after_step8
+)
+
+if (length(unmapped_pma_den) > 0) {
+  message(sprintf(
+    "Step 8b: attempting NCBI TaxID resolution for %d unmapped PMA / De Novo submissions via table metadata...",
+    length(unmapped_pma_den)
+  ))
+  
+  pma_den_fallback_patches <- c(
+    ncbi_patches_1,
+    ncbi_patches_2,
+    taxonomic_patches,
+    acronym_map,
+    "Hepatitis B"              = "Hepatitis B virus",
+    "Hepatitis C"              = "Hepatitis C virus",
+    "HIV-1"                    = "Human immunodeficiency virus 1",
+    "HIV-2"                    = "Human immunodeficiency virus 2",
+    "Human Papillomavirus"     = "Human papillomavirus",
+    "HPV"                      = "Human papillomavirus",
+    "CMV"                      = "Human betaherpesvirus 5",
+    "Cytomegalovirus"          = "Human betaherpesvirus 5",
+    "EBV"                      = "Human gammaherpesvirus 4",
+    "BK Virus"                 = "Betapolyomavirus hominis",
+    "SARS-CoV-2"               = "Severe acute respiratory syndrome coronavirus 2",
+    "Non-variola Orthopoxvirus"= "Orthopoxvirus"
+  )
+  
+  pma_den_candidates <- microbial_df |>
+    filter(Submission %in% unmapped_pma_den) |>
+    select(Submission, Microorganism, Trade.Name) |>
+    separate_rows(Microorganism, sep = "/|,|\\band\\b|;") |>
+    mutate(
+      clean_label = Microorganism |>
+        str_remove_all("(?i)\\b(DNA|RNA|rRNA|viral load|quantitative|qualitative|assay|test|kit|system|panel|genotype|types?|high-risk)\\b") |>
+        str_remove_all("\\(.*?\\)") |>
+        str_squish(),
+      clean_label = ifelse(
+        clean_label %in% names(pma_den_fallback_patches),
+        pma_den_fallback_patches[clean_label],
+        clean_label
+      )
+    ) |>
+    filter(nzchar(clean_label)) |>
+    group_by(FDAregulatoryLabels = clean_label) |>
+    summarise(Submissions = paste(unique(Submission), collapse = ","), .groups = "drop")
+  
+  if (nrow(pma_den_candidates) > 0) {
+    pma_den_resolved <- do.call(rbind, lapply(seq_len(nrow(pma_den_candidates)), function(i) {
+      lbl <- pma_den_candidates$FDAregulatoryLabels[i]
+      sub_str <- pma_den_candidates$Submissions[i]
+      res <- tryCatch(entrez_search(db = "taxonomy", term = paste0(lbl, "[All Names]")), error = function(e) list(ids = character(0)))
+      if (length(res$ids) == 0) {
+        res <- tryCatch(entrez_search(db = "taxonomy", term = lbl), error = function(e) list(ids = character(0)))
+      }
+      data.frame(
+        FDAregulatoryLabels = lbl,
+        Submissions         = sub_str,
+        TaxID               = if (length(res$ids) > 0) unlist(res$ids)[1] else NA_character_,
+        stringsAsFactors    = FALSE
+      )
+    })) |>
+      filter(!is.na(TaxID))
+    
+    if (nrow(pma_den_resolved) > 0) {
+      message(sprintf(
+        "Step 8b complete: resolved %d pathogen labels from PMA / De Novo fallback to NCBI TaxIDs",
+        nrow(pma_den_resolved)
+      ))
+      pathogen_set3 <- bind_rows(pathogen_set3, pma_den_resolved)
+    }
+  }
+}
 
 # ==============================================================================
 #   Step 9  - Merge all three sets, dedupe by TaxID, and attach taxonomic metadata
